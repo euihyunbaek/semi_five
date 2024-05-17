@@ -1,0 +1,14 @@
+servletWorkspace/semiProjectFive/.classpath
+servletWorkspace/.gitignore
+servletWorkspace/semiProjectFive/.project
+servletWorkspace/semiProjectFive/.settings/.jsdtscope
+servletWorkspace/semiProjectFive/.settings/org.eclipse.core.resources.prefs
+servletWorkspace/semiProjectFive/.settings/org.eclipse.jdt.core.prefs
+servletWorkspace/semiProjectFive/.settings/org.eclipse.wst.common.component
+servletWorkspace/semiProjectFive/.settings/org.eclipse.wst.common.project.facet.core.xml
+servletWorkspace/semiProjectFive/.settings/org.eclipse.wst.jsdt.ui.superType.container
+servletWorkspace/semiProjectFive/.settings/org.eclipse.wst.jsdt.ui.superType.name
+servletWorkspace/semiProjectFive/src/main/webapp/META-INF/MANIFEST.MF
+servletWorkspace/semiProjectFive/src/main/webapp/WEB-INF/.gitignore
+servletWorkspace/semiProjectFive/src/main/webapp/WEB-INF/web.xml
+servletWorkspace/Servers/
