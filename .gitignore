@@ -1,5 +1,0 @@
-*.project
-*.classpath
-servletWorkspace/HelloWorld/.settings/
-servletWorkspace/HelloWorld/.gitignore
-servletWorkspace/.gitignore
