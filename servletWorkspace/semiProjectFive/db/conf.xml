@@ -3,6 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+<settings>
+	<setting name ="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+
+
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -15,6 +21,6 @@
     </environment>
   </environments>
   <mappers>
-  	<mapper resource="" />
+  	<mapper resource="/mapper/member-mapper.xml" />
   </mappers>
 </configuration>
