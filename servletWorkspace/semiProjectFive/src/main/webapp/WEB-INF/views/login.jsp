@@ -25,7 +25,7 @@
             </div>
             <div class="input-group">
                 <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
+                <input type="password" id="password" name="pwd" placeholder="비밀번호를 입력하세요">
             </div>
             <button type="submit">Login</button>
         </form>
@@ -36,7 +36,7 @@
             </div>
             <div class="input-group">
                 <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
+                <input type="password" id="password" name="pwd" placeholder="비밀번호를 입력하세요">
             </div>
             <button type="submit">Login</button>
         </form>
@@ -47,7 +47,7 @@
             </div>
             <div class="input-group">
                 <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
+                <input type="password" id="password" name="pwd" placeholder="비밀번호를 입력하세요">
             </div>
             <button type="submit">Login</button>
         </form>
