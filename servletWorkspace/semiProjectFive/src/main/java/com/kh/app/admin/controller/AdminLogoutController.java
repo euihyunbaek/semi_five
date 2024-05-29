@@ -1,4 +1,4 @@
-package com.kh.app.member.controller;
+package com.kh.app.admin.controller;
 
 import java.io.IOException;
 
@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/member/logout")
-public class MemberLogoutController extends HttpServlet{
+@WebServlet("/admin/logout")
+public class AdminLogoutController extends HttpServlet{
+
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		session.setAttribute("alertMsg", "로그아웃완료");
 		session.removeAttribute("loginAdminVo");
+		session.setAttribute("alertMsg", "관리자 로그아웃완료");
 		resp.sendRedirect("/app/home");
-		
-	
 	}
-
+	
+	
+	
 }
