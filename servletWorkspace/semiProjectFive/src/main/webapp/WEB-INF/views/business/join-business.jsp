@@ -23,7 +23,7 @@
       <h2>사업자 회원가입</h2>
       <div class="buttons">
         <div id="home-btn">
-          <a id="home-anchor" href="./home.html"><i class="fi fi-rr-home"></i></a>
+          <a id="home-anchor" href="/app/home"><i class="fi fi-rr-home"></i></a>
         </div>
         <!-- <div id="sidebar-btn">
           <a id="home-anchor" href="./business-mypage.html"><i class="fi fi-rr-menu-burger"></i></a>

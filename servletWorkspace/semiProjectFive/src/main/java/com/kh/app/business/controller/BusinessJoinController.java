@@ -48,12 +48,14 @@ public class BusinessJoinController extends HttpServlet {
 				req.setAttribute("resultMsg", "회원가입 실패 ...");
 			}
 			
-			resp.sendRedirect("/app/home"); //임시로 홈페이지로 redirect 함
+			resp.sendRedirect("/app/business/login");
 			
 		} catch(Exception e) {
 			System.out.println("[ERROR-M0001] " + e.getMessage());
 			e.printStackTrace();
-			req.setAttribute("errMsg", e.getMessage());
+			req.setAttribute("errMsg", "[ERROR-M0001] " + e.getMessage());
+			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
+			
 		}
 		
 		
