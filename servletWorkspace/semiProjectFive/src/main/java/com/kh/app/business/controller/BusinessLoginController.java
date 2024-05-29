@@ -47,7 +47,7 @@ public class BusinessLoginController extends HttpServlet {
 			} else {
 				session.setAttribute("alertMsg", "로그인 실패...");
 			}
-			resp.sendRedirect("/app/home");
+			resp.sendRedirect("/app/home"); //임시로 홈페이지로 redirect
 			
 		} catch(Exception e) {
 			e.printStackTrace();
