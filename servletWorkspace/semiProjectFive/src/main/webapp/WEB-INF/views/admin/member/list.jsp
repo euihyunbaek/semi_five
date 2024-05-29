@@ -53,87 +53,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                 
-                  <td>1</td>
-                  <td>user01</td>
-                  <td> <a href="/admin/stay-register-approve 쿼리스트링">광남이네</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-                  
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>user02</td>
-                  <td><a href="/admin/stay-register-approve">닉네임02</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
 
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>user03</td>
-                  <td><a href="/admin/stay-register-approve">닉네임03</a></td>
-                  <td>24/05/15</td>
+                 <c:forEach items="${voList}" var="vo">
+              	  <tr>
+                  <td>${vo.no}</td>
+                  <td>${vo.id}</td>
+                  <td> <a href="/app/admin/member/detail?no=${vo.no}">${vo.nick}</a></td>
+                  <td>${vo.enrollDate}</td>
                   <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>user04</td>
-                  <td><a href="/admin/stay-register-approve">닉네임04</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>       
-                  <td>5</td>
-                  <td>biz05</td>
-                  <td><a href="/admin/stay-register-approve">ㅇㅇㅇㅇ</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>       
-                  <td>6</td>
-                  <td>user06</td>
-                  <td><a href="/admin/stay-register-approve">ㅋㅋㅋ</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>       
-                  <td>7</td>
-                  <td>user07</td>
-                  <td><a href="/admin/stay-register-approve">닉넴1234</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>       
-                  <td>8</td>
-                  <td>user08</td>
-                  <td><a href="/admin/stay-register-approve">닉 ㅇㅇ</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>       
-                  <td>9</td>
-                  <td>user09</td>
-                  <td><a href="/admin/stay-register-approve">닉네임55</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
-                <tr>       
-                  <td>10</td>
-                  <td>user10</td>
-                  <td><a href="/admin/stay-register-approve">닉네임10</a></td>
-                  <td>24/05/15</td>
-                  <td><input type="checkbox" class="ck" value="${vo.no}"></td>
-
-                </tr>
+              	  </tr>
+                  </c:forEach>
+               
               </tbody>
               <tfoot>
                 <td colspan="5">
@@ -151,15 +81,20 @@
     </main>
 
     <div class="page-wrap">
-        <div class="page-area">
-            <button>이전</button>
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
-            <a href="">5</a>
-            <button>다음</button>
-        </div>
+				<c:if test="${pvo.currentPage > 1}">
+					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage-1}'">이전</button>
+				</c:if>
+				<c:forEach begin="${pvo.startPage}" end="${pvo.endPage}" var="x">
+					<c:if test="${pvo.currentPage == x}">
+						<a>${x}</a>
+					</c:if>
+					<c:if test="${pvo.currentPage != x}">
+						<a href="/app/admin/member/list?pno=${x}">${x}</a>
+					</c:if>
+				</c:forEach>
+				<c:if test="${pvo.currentPage < pvo.maxPage }">
+					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage+1}'">다음</button>
+				</c:if>
     </div>
 
     <footer>

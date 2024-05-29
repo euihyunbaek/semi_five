@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AdminMemberMapper">
+  <select id="getMemberCnt" resultType="com.kh.app.member.vo.MemberVo">
+	SELECT COUNT(NO) FROM MEMBER WHERE QUIT_YN = 'N'
+
+  </select>
+  
+  
+    <select id="selectMemberList" resultType="com.kh.app.member.vo.MemberVo">
+	SELECT * FROM
+	(SELECT ROWNUM AS RNUM, T.*
+	FROM
+	(
+	SELECT ID,NICK,TO_CHAR(ENROLL_DATE, 'YY/MM/DD') AS ENROLL_DATE
+	FROM MEMBER
+	WHERE QUIT_YN ='N'
+	ORDER BY NO DESC
+	)T
+	)WHERE RNUM BETWEEN #{pvo.startNum} AND #{pvo.endNum}
+	;
+
+  </select>
+  
+  
+</mapper>
