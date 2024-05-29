@@ -6,16 +6,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>사업자 로그인</title>
+  <%@ include file="/WEB-INF/views/layout/util.jsp" %>
   <link rel="stylesheet" href="/app/resources/css/business/login-business.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script defer src="/app/resources/js/business/login-business.js"></script>
-  <!-- 폰트 및 아이콘 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  
 </head>
 <body>
+	 <!--  <script type="text/javascript">
+		alert('${alertMsg}');
+	</script> --> 
+
   <header>
     <!-- <h1 id="title">숙박업소 등록</h1>
     <p id="description"><a href="#back" id="back-button">back</a></p> -->
