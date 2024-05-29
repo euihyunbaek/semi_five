@@ -10,4 +10,9 @@ public class BusinessDao {
 	public int join(SqlSession ss, BusinessMemberVo vo) {
 		return ss.insert("BusinessMapper.join", vo);
 	}
+	
+	//로그인
+	public BusinessMemberVo login(SqlSession ss, BusinessMemberVo vo) {
+		return ss.selectOne("BusinessMapper.login", vo);
+	}
 }
