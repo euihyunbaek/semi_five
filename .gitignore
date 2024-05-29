@@ -12,3 +12,4 @@ servletWorkspace/semiProjectFive/src/main/webapp/META-INF/MANIFEST.MF
 servletWorkspace/semiProjectFive/src/main/webapp/WEB-INF/.gitignore
 servletWorkspace/semiProjectFive/src/main/webapp/WEB-INF/web.xml
 servletWorkspace/Servers/
+**/.metadata/
