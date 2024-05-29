@@ -21,4 +21,8 @@
   		, #{name}
   	)
   </insert>
+  
+  <select id="login" resultType="com.kh.app.business.vo.BusinessMemberVo">
+  	SELECT * FROM BUSINESS_MEMBER WHERE ID = #{id} AND PWD = #{pwd} AND QUIT_YN = 'N' AND ADMIN_APPROVE = 'Y';
+  </select>
 </mapper>

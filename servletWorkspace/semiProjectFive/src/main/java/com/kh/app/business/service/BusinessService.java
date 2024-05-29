@@ -56,4 +56,18 @@ public class BusinessService {
 		return result;
 		
 	}
+	
+	//로그인
+	public BusinessMemberVo login(BusinessMemberVo vo) throws Exception {
+		
+		//비즈니스 로직
+		
+		//DAO 호출
+		SqlSession ss = getSqlSession();
+		BusinessMemberVo loginMemberVo = dao.login(ss, vo);
+		
+		ss.close();
+		
+		return loginMemberVo;
+	}
 }
