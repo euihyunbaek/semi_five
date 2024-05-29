@@ -59,6 +59,38 @@ public MemberVo login(MemberVo vo) throws Exception {
 	ss.close();
 	return loginMemberVo;
 }
+
+//회원정보수정
+public int edit(MemberVo vo) throws Exception {
+	
+	 // 비즈니스 로직
+    if(!vo.getPwd().equals(vo.getPwd2())) {
+       throw new Exception("비밀번호 일치하지 않음");
+    }
+    
+    // DAO 호출
+	SqlSession ss = getSqlSession();
+    int result = dao.edit(ss, vo);
+    
+    if(result == 1) {
+       ss.commit();
+    } else {
+       ss.rollback();
+    }
+    ss.close();
+    
+    return result;
+}
+
+//아이디 중복검사
+public boolean checkIdDup(String id) throws Exception {
+	
+	SqlSession ss = getSqlSession();
+	int result = dao.checkIdDup(ss, id);
+	System.out.println("result dao: " + result);
+	ss.close();
+	return result == 0;
+}
    
 	
 }
