@@ -1,17 +1,31 @@
 package com.kh.app.business.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
+
 
 import com.kh.app.business.vo.BusinessMemberVo;
 import com.kh.app.stay.service.StayService;
+import com.kh.app.stay.vo.StayPicVo;
 import com.kh.app.stay.vo.StayVo;
+import com.kh.app.util.file.FileUpload;
+
+@MultipartConfig(
+		maxFileSize = 1024*1024*50,	//1024byte * 1024 * 50 = 50MB
+		maxRequestSize = 1024*1024*500,
+		fileSizeThreshold = 1024*1024*50
+)
 
 @WebServlet("/business/stay-register")
 public class BusinessStayregisterController extends HttpServlet {
@@ -48,7 +62,7 @@ public class BusinessStayregisterController extends HttpServlet {
 			HttpSession session = req.getSession();
 			BusinessMemberVo loginMemberVo = (BusinessMemberVo) session.getAttribute("loginMemberVo");
 			
-			//데이터 꺼내기 (아직 사진 X)
+			//데이터 꺼내기 (아직 사진 제외)
 			String storeName = req.getParameter("name");
 			String phone = req.getParameter("phone");
 			String address = req.getParameter("address");
@@ -72,12 +86,32 @@ public class BusinessStayregisterController extends HttpServlet {
 			vo.setWaterPlayYn(waterPlayYn);
 			vo.setTypeDog(typeDog);
 			
+			System.out.println(loginMemberVo);
+			System.out.println(vo);
+			// 데이터 꺼내기(사진)
+			Collection<Part> parts = req.getParts();
+			List<Part> fileList = new ArrayList<Part>();
+			for(Part part : parts) {
+				if(part.getContentType() != null) {
+					fileList.add(part);
+				}
+			}
+			
+			//서버에 파일 업로드
+			List<StayPicVo> picVoList = new ArrayList<StayPicVo>();
+			for(Part f : fileList) {
+				StayPicVo picVo = FileUpload.safeFile(f);
+				picVoList.add(picVo);
+			}
+			
+			System.out.println(picVoList);
+			
 			//서비스 호출
-			StayService ss = new StayService();
-			int result = ss.register(vo);
+			StayService stayss = new StayService();
+			int result = stayss.register(vo, picVoList);
 			
 			//결과 처리
-			if(result == 1) {
+			if(result >= 1) { //여러개의 사진을 올리면 1 이상이 될 수 있으므로 조건식을 1 이상으로 수정
 				session.setAttribute("alertMsg", "숙소등록 성공 !!");
 			} else {
 				session.setAttribute("alertMsg", "숙소등록 실패 ...");

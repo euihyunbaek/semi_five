@@ -4,31 +4,54 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="StayMapper">
   <insert id="register">
-  	INSERT INTO STAY (
-    NO
-    , STORE_NAME
-    , ADDRESS
-    , INTERNET_AD
-    , PHONE
-    , EMAIL
-    , BUSINESS_MEMBER_NO
-    , BUSINESS_NO
-    , STAY_CODE
-    , WATER_PLAY_YN
-    , TYPE_DOG
+  	INSERT INTO STAY 
+  	(
+	    NO
+	    , STORE_NAME
+	    , ADDRESS
+	    , INTERNET_AD
+	    , PHONE
+	    , EMAIL
+	    , BUSINESS_MEMBER_NO
+	    , BUSINESS_NO
+	    , STAY_CODE
+	    , WATER_PLAY_YN
+	    , TYPE_DOG
     )
-    VALUES (
-    SEQ_STAY.NEXTVAL
-    , #{storeName}
-    , #{address}
-    , #{internetAd}
-    , #{phone}
-    , #{email}
-    , #{businessMemberNo}
-    , #{businessNo}
-    , #{stayCode}
-    , #{waterPlayYn}
-    , #{typeDog}
+    VALUES 
+    (
+    	SEQ_STAY.NEXTVAL
+	    , #{storeName}
+	    , #{address}
+	    , #{internetAd}
+	    , #{phone}
+	    , #{email}
+	    , #{businessMemberNo}
+	    , #{businessNo}
+	    , #{stayCode}
+	    , #{waterPlayYn}
+	    , #{typeDog}
 	)
+  </insert>
+  
+  <insert id="insertStayPic">
+  	INSERT ALL
+  		<foreach collection="list" item="vo">
+  		INTO STAY_PIC 
+  		(
+		    NO
+		    , STAY_NO
+		    , ORIGIN_NAME
+		    , CHANGE_NAME
+	    )
+	    VALUES 
+	    (
+		    (SELECT FN_GET_STAY_PIC_SEQ_NEXTVAL FROM DUAL)
+		    , SEQ_STAY.CURRVAL
+		    , #{vo.originName}
+		    , #{vo.changeName}
+		)
+  		</foreach>
+	SELECT * FROM DUAL
   </insert>
 </mapper>
