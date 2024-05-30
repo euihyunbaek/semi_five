@@ -34,7 +34,7 @@
   <div class="item">
     <ul class="icon-list">
         <li>
-            <a href="">     
+            <a href="/app/admin/business/list">     
                 <i class="fa-solid fa-business-time"></i>
                 <p>사업자 회원 관리</p>
             </a>

@@ -39,6 +39,9 @@ public class MemberJoinController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
+			HttpSession session = req.getSession();
+
+			
 			
 			String name = req.getParameter("name");
 			String id = req.getParameter("id");
@@ -87,12 +90,17 @@ public class MemberJoinController extends HttpServlet{
 			int result = ms.join(vo);
 			System.out.println("여기는서비스vo아래"+vo);
 			if(result ==1) {
-				req.setAttribute("resultMsg", "회원가입성공");
+				
+				session.setAttribute("alertMsg", "회원가입성공! 로그인 페이지로 이동합니다");
+				resp.sendRedirect(req.getContextPath() + "/member/login");			
+//				req.setAttribute("alertMsg", "회원가입성공");
 			}else {
-				req.setAttribute("resultMsg", "회원가입실패");
-			}
-			resp.sendRedirect("/app/member/login");
 			
+				session.setAttribute("alertMsg", "회원가입실패, 홈으로 이동합니다...");
+				resp.sendRedirect(req.getContextPath() + "/home");
+				
+			}
+			System.out.println("회원가입 result: "+ result);
 
 			
 		}catch (Exception e) {

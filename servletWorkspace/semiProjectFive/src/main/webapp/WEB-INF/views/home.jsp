@@ -13,9 +13,34 @@
 </head>
 <body>
     <header class="header">
-        <a href="../admin/admin_menu.html" class="mypage">
+   <c:choose>
+    <c:when test="${sessionScope.loginAdminVo != null}">
+        <a href="/app/admin/menu" class="mypage">
             <i class="fa-solid fa-bars"></i>
         </a>
+    
+    </c:when>
+    <c:when test="${sessionScope.loginMemberVo != null}">
+        <a href="/app/member/menu" class="mypage">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    
+    </c:when>
+    <c:when test="${sessionScope.loginBusinessMemberVo != null}">
+        <a href="/app/business/menu" class="mypage">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    
+    </c:when>
+    <c:otherwise>
+        <a href="/app/login" class="mypage">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </c:otherwise>
+   
+   </c:choose>
+   
+   
     </header>
     <div class="SchBox">
             <button maxlength="40">

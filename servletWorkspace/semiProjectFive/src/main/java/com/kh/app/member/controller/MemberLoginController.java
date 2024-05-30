@@ -58,6 +58,7 @@ public class MemberLoginController extends HttpServlet{
 			}
 //			req.getRequestDispatcher("/WEB-INF/views/common/result.jsp").forward(req, resp);
 //로그인성공하면 성공했다는 창 안 띄우고 바로 홈페이지로 보내버릴거임==포워딩안할거임
+			
 			resp.sendRedirect("/app/home");			
 
 		}catch(Exception e){
