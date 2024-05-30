@@ -2,6 +2,7 @@ package com.kh.app.admin.service;
 
 import com.kh.app.admin.dao.AdminDao;
 import com.kh.app.admin.vo.AdminVo;
+import com.kh.app.business.vo.BusinessMemberVo;
 import com.kh.app.common.vo.PageVo;
 import com.kh.app.member.vo.MemberVo;
 
@@ -50,6 +51,34 @@ public class AdminService {
 
 		ss.close();
 		return voList;
+	}
+
+
+	
+	
+	
+	//전체사업자회원목록조회
+	public int getBusinessCnt() throws Exception {
+		SqlSession ss = getSqlSession();
+		int cnt = dao.getBusinessCnt(ss);
+		System.out.println("service bizCnt: "+cnt);
+		ss.close();
+		return cnt;
+	}
+
+	
+	
+	
+	
+//사업자회원목록
+	public List<BusinessMemberVo> selectBusinessList(PageVo pvo) throws Exception {
+		SqlSession ss = getSqlSession();
+		List<BusinessMemberVo>voList = dao.selectBusinessList(ss, pvo);
+		System.out.println("service bizmem pvo: "+pvo);
+		ss.close();
+		return voList;
+	
+	
 	}
 
 

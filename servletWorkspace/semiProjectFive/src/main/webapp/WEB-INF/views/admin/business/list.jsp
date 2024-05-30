@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/app/resources/css/admin/member/list.css">
         <%@ include file="/WEB-INF/views/layout/util.jsp" %>
 
-  <script defer src="/app/resources/js/admin/member/list.js"></script>
+  <script defer src="/app/resources/js/admin/business/list.js"></script>
 
 
 </head>
@@ -58,7 +58,7 @@
               	  <tr>
                   <td>${vo.no}</td>
                   <td>${vo.id}</td>
-                  <td> <a href="/app/admin/member/detail?no=${vo.no}">${vo.nick}</a></td>
+                  <td> <a href="/app/admin/business/detail?no=${vo.no}">${vo.nick}</a></td>
                   <td>${vo.enrollDate}</td>
                   <td><input type="checkbox" class="ck" value="${vo.no}"></td>
               	  </tr>
@@ -68,8 +68,8 @@
               <tfoot>
                 <td colspan="5">
                   <div>
-                    <div><button onclick="banUser();">활동제한</button></div>
                     <div><button onclick="deleteUser();">추방하기</button></div>
+                    <div><button onclick="approveBiz();">승인하기</button></div>
                   </td>
 
               </tfoot>
@@ -83,7 +83,7 @@
     <div class="page-wrap">
     <div class="page-area">
 				<c:if test="${pvo.currentPage > 1}">
-					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage-1}'">이전</button>
+					<button onclick = "location.href='/app/admin/business/list?pno=${pvo.currentPage-1}'">이전</button>
 				</c:if>
 				<c:forEach begin="${pvo.startPage}" end="${pvo.endPage}" var="x">
 					<c:if test="${pvo.currentPage == x}">
@@ -94,13 +94,13 @@
 						</a>
 					</c:if>
 					<c:if test="${pvo.currentPage != x}">
-						<a href="/app/admin/member/list?pno=${x}">
+						<a href="/app/admin/business/list?pno=${x}">
 						${x}
 						</a>
 					</c:if>
 				</c:forEach>
 				<c:if test="${pvo.currentPage < pvo.maxPage }">
-					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage+1}'">다음</button>
+					<button onclick = "location.href='/app/admin/business/list?pno=${pvo.currentPage+1}'">다음</button>
 				</c:if>
 				</div>
     </div>

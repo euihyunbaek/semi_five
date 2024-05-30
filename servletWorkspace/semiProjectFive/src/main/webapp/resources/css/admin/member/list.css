@@ -160,7 +160,7 @@ table th:nth-of-type(1) {
 
 table td:nth-of-type(2),
 table th:nth-of-type(2) {
-  width: 100px;
+  max-width: 120px;
 }
 
 table td:nth-of-type(3),
@@ -241,5 +241,14 @@ footer {
   font-size: 0.5em;
 }
 
+
+th, td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px; /* 여백 추가 */
+  text-align: center; /* 중앙 정렬 */
+  white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 '...'로 표시 */
+}
 
 

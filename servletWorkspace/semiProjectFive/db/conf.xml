@@ -25,6 +25,7 @@
   	<mapper resource="/mapper/business-mapper.xml" />
   	<mapper resource="/mapper/admin-mapper.xml" />  	
   	<mapper resource="/mapper/admin-member-mapper.xml" />
+  	<mapper resource="/mapper/admin-business-mapper.xml" />
   	<mapper resource="/mapper/stay-mapper.xml" />  	
   </mappers>
 </configuration>

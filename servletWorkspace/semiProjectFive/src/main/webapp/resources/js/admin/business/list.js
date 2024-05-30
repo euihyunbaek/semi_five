@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 const ckAll = document.querySelector("#selectAll");
 const ckArr =  document.querySelectorAll(".ck")
 ckAll.addEventListener("click",() => {
@@ -6,19 +9,9 @@ ckAll.addEventListener("click",() => {
   })
 })
 
-// function selectCheckboxes(){
-//   const checkboxArr =  document.querySelectorAll("main>table>tbody input[type=checkbox]")
-//   console.log("checkboxArr : ", checkboxArr);
-//   let str ="";
-//   for(let i = 0; i<checkboxArr.length;i++){
-//     checkboxArr[i].checked = true;
-//   }
 
 
-// }
-
-let str ="";
-function deleteUser(){
+function approveBiz(){
   const checkboxArr = document.querySelectorAll(".ck");
 	console.log("checkboxArr : " , checkboxArr)
   let str ="";
@@ -32,9 +25,8 @@ function deleteUser(){
 	}
 	//	console.log(checkboxArr[i].checked) ;
 	}
-	// 경로로 보내기(임시주소)// location.href="http://127.0.0.1:8888/app/admin/member/delete"+str;
-	
+	// 경로로 보내기(임시주소)// location.href="http://127.0.0.1:8888/app/admin/stayregister/approve"+str;
+		location.href="http://127.0.0.1:8888/app/admin/business/approve/?"+str;
+
 
 }
-
-
