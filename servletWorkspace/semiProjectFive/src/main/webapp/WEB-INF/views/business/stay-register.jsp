@@ -51,7 +51,7 @@
         <fieldset id="accomo-info">
           <legend>숙박업소 상세정보</legend>
           <label for="dropdown">숙박업소 종류:
-            <select name="acommo-type" id="dropdown" required>
+            <select name="accomo-type" id="dropdown" required>
               <option value="">(선택하세요)</option>
               <option value="1">호텔</option>
               <option value="2">펜션</option>
@@ -61,10 +61,10 @@
           </label>
           물놀이 가능 여부:
           <label for="waterplay-ok">
-            <input type="radio" name="waterplay" id="waterplay-ok" class="inline" value="1"> 물놀이 가능
+            <input type="radio" name="waterplay" id="waterplay-ok" class="inline" value="Y"> 물놀이 가능
           </label>
           <label for="waterplay-notok">
-            <input type="radio" name="waterplay" id="waterplay-notok" class="inline" value="2" required> 물놀이 불가능
+            <input type="radio" name="waterplay" id="waterplay-notok" class="inline" value="N" required> 물놀이 불가능
           </label>
           허용 반려견 종류:
           <label for="small">
