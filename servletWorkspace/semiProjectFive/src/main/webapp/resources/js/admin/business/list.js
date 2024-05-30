@@ -26,7 +26,7 @@ function approveBiz(){
 	//	console.log(checkboxArr[i].checked) ;
 	}
 	// 경로로 보내기(임시주소)// location.href="http://127.0.0.1:8888/app/admin/stayregister/approve"+str;
-		location.href="http://127.0.0.1:8888/app/admin/business/approve/?"+str;
+		location.href="http://127.0.0.1:8888/app/admin/business/approve?"+str;
 
 
 }

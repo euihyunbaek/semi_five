@@ -90,7 +90,6 @@ public class AdminService {
 		int result = dao.approve(ss, noArr);
 		if(result>0) {
 			
-		}else if(result >0) {
 			ss.commit();
 
 		}else {
