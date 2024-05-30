@@ -1,0 +1,245 @@
+@charset "UTF-8";
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+      font-family: "Noto Sans KR", sans-serif;
+
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-rows: 35px 40px 44px auto 30px 50px;
+  height: 100vh;
+  width: 430px;
+  margin: 0 auto;
+  border: 1px solid #ccc; 
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #334D8F;
+  color: white;
+  padding: 0 10px; /* 여백 추가 */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SchBox {
+  flex: 1; /* 가로 공간을 차지하게 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #334D8F;
+}
+
+header .SchBox form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+header .menu {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: azure;
+}
+
+
+/* 네비게이션 스타일 */
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 0px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+
+}
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+}
+
+nav ul li {
+  margin: none;
+}
+
+nav ul li a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  font-size: 0.7em;
+}
+
+nav ul li a:hover {
+  background-color: #111;
+}
+
+/* 메인 콘텐츠 스타일 */
+/* 메인 콘텐츠 스타일 */
+main {
+  overflow-y: auto; /* 세로 스크롤바 설정, 내용이 길어지면 스크롤 가능하도록 */
+  padding: 10px; /* 내외부 간격 추가 */
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+main section {
+  flex: 1;
+}
+
+/* 테이블 스타일 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px; /* 테이블과 다른 요소들 사이에 간격 추가 */
+  background-color: #ffffff; /* 테이블 배경색 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 테이블 그림자 */
+}
+
+th {
+  background-color: rgb(191, 191, 191);
+  padding: 10px; /* 여백 추가 */
+  text-align: center; /* 중앙 정렬 */
+  font-weight: bold; /* 글자 두껍게 */
+}
+
+th, td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px; /* 여백 추가 */
+  text-align: center; /* 중앙 정렬 */
+  white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 '...'로 표시 */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* 짝수 행 배경색 */
+}
+
+tbody tr:hover {
+  background-color: #e7e7e7; /* 마우스 오버 시 배경색 */
+}
+
+td a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 각 열의 너비 설정 */
+table td:nth-of-type(1),
+table th:nth-of-type(1) {
+  width: 50px;
+}
+
+table td:nth-of-type(2),
+table th:nth-of-type(2) {
+  width: 100px;
+}
+
+table td:nth-of-type(3),
+table th:nth-of-type(3) {
+  width: 200px;
+}
+
+table td:nth-of-type(4),
+table th:nth-of-type(4) {
+  width: 120px;
+}
+
+tfoot td div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+tfoot td div button {
+  padding: 10px 20px; /* 버튼 여백 */
+  border: none;
+  background-color: #334D8F; /* 버튼 배경색 */
+  color: white;
+  cursor: pointer; /* 마우스 포인터 변경 */
+  transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+tfoot td div button:hover {
+  background-color: #2b3b6f; /* 마우스 오버 시 버튼 배경색 */
+}
+
+
+/*스크롤바 없애기*/
+main::-webkit-scrollbar { display: none;}
+
+/* 페이지네이션 스타일 */
+.page-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0; /* 위아래 간격 추가 */
+}
+
+.page-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-area a,
+.page-area button {
+  text-decoration: none;
+  color: #334D8F;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-area a:hover,
+.page-area button:hover {
+  background-color: #334D8F;
+  color: white;
+}
+
+
+/* 푸터 스타일 */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 0.5em;
+}
+
+
+

@@ -16,7 +16,7 @@
 <body>
 <header>
     <div class="menu"><a href="/app/home">홈</a></div>
-    <div class="menu"><a href="/app/member/logout">로그아웃</a></div>
+    <div class="menu"><a href="/app/admin/logout">로그아웃</a></div>
 </header>
 
 <main>
@@ -24,9 +24,9 @@
   <div class="item">
     <ul class="icon-list">
         <li>
-            <a href="#">
+            <a href="/app/admin/member/list">
                 <i class="fa-solid fa-users"></i>
-            <p>일반 회원 관리</p>
+            <p>회원 관리</p>
             </a>
         </li>
     </ul>

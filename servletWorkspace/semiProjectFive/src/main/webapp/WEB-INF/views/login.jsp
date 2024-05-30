@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+        <%@ include file="/WEB-INF/views/layout/util.jsp" %>
+    
     <link rel="stylesheet" href="/app/resources/css/login.css">
     <script defer src="/app/resources/js/login.js"></script>
     
