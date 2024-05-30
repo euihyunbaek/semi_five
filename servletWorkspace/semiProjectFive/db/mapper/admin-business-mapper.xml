@@ -27,5 +27,15 @@ ORDER BY NO DESC
 
   </select>
   
+  <update id="approve">
+	UPDATE BUSINESS_MEMBER
+    	SET QUIT_YN ='Y'
+    	<!-- BoardDao에서 넘어온 배열 이름 그대로 쓰는게 아님. 무조건 'array로' -->
+    <foreach item="no" collection="array" separator="," open="WHERE NO IN (" close=")">
+    #{no}
+	</foreach>
+</update>
+  
+  
   
 </mapper>
