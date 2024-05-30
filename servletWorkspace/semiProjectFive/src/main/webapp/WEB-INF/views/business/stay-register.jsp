@@ -26,7 +26,7 @@
     	<%@ include file="/WEB-INF/views/layout/business/header.jsp" %>
   	</header>
     <main>
-      <form action="" method="post" id="register-form">
+      <form action="" method="post" id="register-form" enctype="multipart/form-data">
         <fieldset id="essential-info">
           <legend>필수정보</legend>
           <label for="name" id="name-label">
@@ -83,7 +83,7 @@
         <fieldset>
           <legend>숙소 사진 업로드</legend>
           <label for="picture">사진을 업로드하세요: 
-            <input id="picture" type="file" name="file" />
+            <input id="picture" type="file" name="f" multiple/>
           </label>
         </fieldset>
         <input id="submit" type="submit" value="숙소등록요청" />
