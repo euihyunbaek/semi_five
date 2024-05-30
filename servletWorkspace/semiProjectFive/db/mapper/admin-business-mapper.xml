@@ -20,6 +20,7 @@ FROM
 SELECT NO,ID,NICK,TO_CHAR(ENROLL_DATE, 'YY/MM/DD') AS ENROLL_DATE
 FROM BUSINESS_MEMBER
 WHERE ADMIN_APPROVE ='N'
+AND QUIT_YN = 'N'
 ORDER BY NO DESC
 )T
 )WHERE RNUM BETWEEN #{startNum} AND #{endNum}
@@ -29,7 +30,7 @@ ORDER BY NO DESC
   
   <update id="approve">
 	UPDATE BUSINESS_MEMBER
-    	SET QUIT_YN ='Y'
+    	SET ADMIN_APPROVE ='Y'
     	<!-- BoardDao에서 넘어온 배열 이름 그대로 쓰는게 아님. 무조건 'array로' -->
     <foreach item="no" collection="array" separator="," open="WHERE NO IN (" close=")">
     #{no}
