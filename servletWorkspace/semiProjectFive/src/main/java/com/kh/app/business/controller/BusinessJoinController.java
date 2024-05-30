@@ -43,9 +43,9 @@ public class BusinessJoinController extends HttpServlet {
 			
 			//결과처리
 			if(result == 1) {
-				req.setAttribute("resultMsg", "회원가입 성공 !!");
+				req.setAttribute("alertMsg", "회원가입 성공 !!");
 			} else {
-				req.setAttribute("resultMsg", "회원가입 실패 ...");
+				req.setAttribute("alertMsg", "회원가입 실패 ...");
 			}
 			
 			resp.sendRedirect("/app/business/login");
