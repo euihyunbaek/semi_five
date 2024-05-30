@@ -15,8 +15,8 @@
 </head>
 <body>
   <header>
-    <div class="menu"><a href="">홈</a></div>
-    <div class="menu"><a href="">메뉴</a></div>
+    <div class="menu"><a href="/app/home">홈</a></div>
+    <div class="menu"><a href="/app/admin/menu">메뉴</a></div>
 
   </header>
   <div class="SchBox">
@@ -81,20 +81,28 @@
     </main>
 
     <div class="page-wrap">
+    <div class="page-area">
 				<c:if test="${pvo.currentPage > 1}">
 					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage-1}'">이전</button>
 				</c:if>
 				<c:forEach begin="${pvo.startPage}" end="${pvo.endPage}" var="x">
 					<c:if test="${pvo.currentPage == x}">
-						<a>${x}</a>
+						<a>
+						<strong>
+						${x}
+						</strong>						
+						</a>
 					</c:if>
 					<c:if test="${pvo.currentPage != x}">
-						<a href="/app/admin/member/list?pno=${x}">${x}</a>
+						<a href="/app/admin/member/list?pno=${x}">
+						${x}
+						</a>
 					</c:if>
 				</c:forEach>
 				<c:if test="${pvo.currentPage < pvo.maxPage }">
 					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage+1}'">다음</button>
 				</c:if>
+				</div>
     </div>
 
     <footer>

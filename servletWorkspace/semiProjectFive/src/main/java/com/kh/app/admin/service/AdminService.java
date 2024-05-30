@@ -37,6 +37,7 @@ public class AdminService {
 	public int getMemberCnt() throws Exception {
 		SqlSession ss = getSqlSession();
 		int cnt = dao.getMemberCnt(ss);
+		System.out.println("service memberCnt: "+cnt);
 		ss.close();
 		return cnt;
 	}
@@ -45,6 +46,8 @@ public class AdminService {
 	public List<MemberVo> selectMemberList(PageVo pvo) throws Exception {
 		SqlSession ss = getSqlSession();
 		List<MemberVo>voList = dao.selectMemberList(ss,pvo);
+		System.out.println("service pvo :"+pvo);
+
 		ss.close();
 		return voList;
 	}

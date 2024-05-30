@@ -45,10 +45,11 @@ public class AdminMemberListController extends HttpServlet{
 			//복잡한작업. 멤버객체 리스트로만들고 페이지정보 서비스메소드에 전달
 			List<MemberVo>voList = as.selectMemberList(pvo);
 			//결과
-			
 			System.out.println("voList : " + voList);
+			System.out.println("controller pvo :"+pvo);
 			req.setAttribute("voList", voList);
 			req.setAttribute("pvo", pvo);
+			
 			
 			req.getRequestDispatcher("/WEB-INF/views/admin/member/list.jsp").forward(req, resp);
 

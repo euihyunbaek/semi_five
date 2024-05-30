@@ -19,13 +19,14 @@ public class AdminDao {
 
 	public int getMemberCnt(SqlSession ss) {
 
-	    Integer result = ss.selectOne("AdminMemberMapper.getMemberCnt");
-	    return result != null ? result.intValue() : 0; // 결과가 null일 경우 0으로 처리
+	    return ss.selectOne("AdminMemberMapper.getMemberCnt");
+	    
 	
 	}
 
 	public List<MemberVo> selectMemberList(SqlSession ss, PageVo pvo) {
-	
+		System.out.println("dao pvo :"+pvo);
+
 	    return ss.selectList("AdminMemberMapper.selectMemberList", pvo);
 
 		
