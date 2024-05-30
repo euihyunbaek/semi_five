@@ -47,4 +47,14 @@ public class AdminDao {
 	}
 
 	
+	//회원 여러개 승인
+	public int approve(SqlSession ss, String[] noArr) {
+		System.out.println("noArr : " + noArr);
+		for (String x : noArr) {
+			System.out.println("x : " + x);
+		}
+		 return ss.update("AdminBusinessMapper.approve",noArr);
+	}
+
+	
 }

@@ -82,5 +82,27 @@ public class AdminService {
 	}
 
 
+//비즈니스 체크된 멤버 승인하기
+	public int approve(String[] noArr) throws Exception {
+		
+		
+		SqlSession ss = getSqlSession();
+		int result = dao.approve(ss, noArr);
+		if(result>0) {
+			
+		}else if(result >0) {
+			ss.commit();
+
+		}else {
+			ss.rollback();
+
+		}ss.close();
+		return result;
+		
+	}
+
+
+
+
 
 }
