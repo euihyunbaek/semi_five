@@ -13,7 +13,6 @@
 	, TOTAL_GUEST
 	, TOTAL_PRICE
 	, STAY_NO
-	, RESERVATION_STATUS
 	, COUNT_DOG
 	)
 	VALUES
@@ -25,7 +24,6 @@
 	, #{totalGuest}
 	, #{totalPrice}
 	, #{stayNo}
-	, #{reservationStatus}
 	, #{countDog}
 	)
   </insert>
