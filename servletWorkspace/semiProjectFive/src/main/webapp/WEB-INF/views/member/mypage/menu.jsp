@@ -8,8 +8,10 @@
     <title>member-menu</title>
     <link rel="stylesheet" href="/app/resources/css/member/menu.css">
    	<%@ include file="/WEB-INF/views/layout/util.jsp" %>
+   	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="/app/resources/js/member/menu.js"></script>
+   	 <link rel="stylesheet" href="/app/resources/css/memberMenuEdit.css">
 </head>
 <body>
     <header class="header">
@@ -37,7 +39,7 @@
         <ul>
             <li>
                 <a href="">
-                    <div>내 리뷰</div>
+                    <div>내 정보</div>
                 </a>
             </li>
             <li>
@@ -47,7 +49,7 @@
             </li>
             <li>
                 <a href="./stay_detail_room/stay_detail_room.html">
-                    <div>정보수정 </div>
+                    <div>내 리뷰 </div>
                 </a>
             </li>
             <li>
@@ -60,72 +62,67 @@
     </nav>
     <main class="main-content">
         <section class="container">
-            
-                <div class="stay-info">
-                    <div class="stay-info-container">
-                        <div class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>인천 강화군 화도면 해안남로 2680-12</span>
-                        </div>
-                        <div class="telephone">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>
-                                010-0000-0000
-                            </span>
-                        </div>
-                        <div class="internet-address">
-                            <i class="fa-solid fa-globe"></i>
-                            <span>https://www.instagram.com/seaside__hill</span>
-                        </div>
+     	<form action="/app/member/edit" method="post">
+            <div> 
+              <input type="hidden" value="${sessionScope.loginMemberVo.no}">
+            </div>
+            <div> 
+              <label for="name">이름</label>
+              <input readonly type="text" id="userName" name="name" placeholder="성함을 입력해주세요" value="${sessionScope.loginMemberVo.name}">
+            </div>
+            <div>
+              <label for="id">아이디</label>
+                <input readonly type="text" id="userId" name="id" placeholder="아이디 "  value="${sessionScope.loginMemberVo.id}">
+            </div>
 
-                    </div>
-                </div>
-                <div class="stay-info"> <!--jsp에서 반복문-->
-                    <div class="stay-notice">
-                        <div class="notice-title">
-                            <i class="fa-solid fa-bullhorn"></i>
-                            <!-- 공지사항 제목 -->
-                            공지사항 제목                           
-                        </div>
-                        <div class="notice-content">
-                            <!-- 공지사항 내용 -->
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique eum vel possimus sed cumque blanditiis ipsum velit esse tenetur natus iure error nobis, debitis vero? Consequuntur, quod repudiandae. Amet, facere.
-                        </div>
 
-                    </div>
-                </div>
-                <div class="stay-info"> <!--jsp에서 반복문-->
-                    <div class="stay-notice">
-                        <div class="notice-title">
-                            <i class="fa-solid fa-bullhorn"></i>
-                            공지사항 제목2                           
-                        </div>
-                        <div class="notice-content">
-                             공지사항 내용
-                             ㅁㄴㅇㄻㄴㅇㄻㄴㅇ
-                             ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ
-                             ㅁㄴㅇㄻㄴㄻㄴㅇㄻㄴㄹ
-                             ㅁㄴㄹㅇㄴㅁㄹㄴㅇㅁㄻㄴㅇ
-                             ㅁㅇㄴㄻㄴㄹㄴㅁㅇㄹ
-                             ㅁㄴㅇㄻㄴㄻㅇㄴㄹㅇㄴㅁㄹㄴ
-                             ㅁㄹㄴㅇㅇㄴㄻㄴㅇㄹㄴㅇㄹ 
-                             zxczxczcxzxcxz
-                             zxczxczczczxcxz
-                             czczxcsdfadfsadfgsgsgwerwerwe
-                             ㅁㄴㅇㄻㄴㅇㄻㄴㅇ
-                             ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ
-                             ㅁㄴㅇㄻㄴㄻㄴㅇㄻㄴㄹ
-                             ㅁㄴㄹㅇㄴㅁㄹㄴㅇㅁㄻㄴㅇ
-                             ㅁㅇㄴㄻㄴㄹㄴㅁㅇㄹ
-                             ㅁㄴㅇㄻㄴㄻㅇㄴㄹㅇㄴㅁㄹㄴ
-                             ㅁㄹㄴㅇㅇㄴㄻㄴㅇㄹㄴㅇㄹ 
-                             zxczxczcxzxcxz
-                             zxczxczczczxcxz
-                             czczxcsdfadfsadfgsgsgwerwerwe
-                        </div>
+            <div>
+              <label for="pwd">
+                비밀번호
+              </label>
+              <input type="password" name="pwd" placeholder="비밀번호는 20자 이하" maxlength="20" required>
+            </div>
+            <div>
+              <label for="pwd">
+                비밀번호 확인
+              </label>
+              <input type="password" name="pwd2" placeholder= "비밀번호를 다시 입력해주세요" maxlength="20" required>
+            </div>
 
-                    </div>
-                </div>
+            <div>
+              <label for="nick">
+                닉네임
+              </label>
+              <input type="text" name="nick" placeholder="닉네임을 입력해주세요" maxlength="12" value="${sessionScope.loginMemberVo.nick}">
+            </div>
+            <div>
+              <label for="phone">
+                전화번호
+              </label>
+              <input type="text" name="phone" placeholder=" '-'제외 11자리 입력(01012345678)" maxlength="12" value="${sessionScope.loginMemberVo.phone}">
+            </div>
+            <div>
+              <label for="email">
+                이메일
+              </label>
+              <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+              placeholder="e.g) honggildong@naver.com"
+              value="${sessionScope.loginMemberVo.email}">
+
+            </div>
+            <div>
+              <label>프로필사진</label>
+              <input type="file" name="profile" >
+            </div>  
+
+
+            <div>
+              <button type="submit"id="memberjoin" >정보 수정하기</button>
+              <button type ="button" onclick = "location.href = '/app/member/quit'">탈퇴하기</button>
+              
+            </div>
+
+        </form>
 
 
                
