@@ -1,9 +1,12 @@
 package com.kh.app.business.controller;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -77,6 +80,35 @@ public class BusinessStayregisterController extends HttpServlet {
 			String capacity = req.getParameter("capacity");
 			String price = req.getParameter("price");
 			
+			///-------------------썸네일사진 꺼내기----------------------------///
+	        Part thumbnail = req.getPart("thumbnail");
+
+	        String changeName = "";
+	        if(thumbnail != null && thumbnail.getSize() > 0) {  
+	            String originFileName = thumbnail.getSubmittedFileName();
+	            InputStream is = thumbnail.getInputStream();
+	            //경로지정(민정노트북절대경로. 각자 테스트할 작업환경에 맞게 수정해야함)
+	            String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
+//	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
+	            String random = UUID.randomUUID().toString();
+	            String ext = originFileName.substring(originFileName.lastIndexOf("."));
+	            changeName = System.currentTimeMillis() + "_" + random + ext;
+	            FileOutputStream fos = new FileOutputStream(path + changeName);
+
+	            byte[] buf = new byte[1024];
+	            int size = 0;
+	            while ((size = is.read(buf)) != -1) {
+	                fos.write(buf, 0, size);
+	            }
+	            is.close();
+	            fos.close();
+	        }
+			
+			
+			
+			
+			
+			
 			StayVo vo = new StayVo();
 			vo.setStoreName(storeName);
 			vo.setPhone(phone);
@@ -91,10 +123,13 @@ public class BusinessStayregisterController extends HttpServlet {
 			vo.setRoomName(roomName);
 			vo.setCapacity(capacity);
 			vo.setPrice(price);
-			
+	        vo.setThumbnail(changeName);
+
 			
 			System.out.println(loginBizMemberVo);
 			System.out.println(vo);
+			System.out.println("controller thumbnail : "+vo.getThumbnail());
+			
 			
 			
 			// 데이터 꺼내기(사진 여러장)
