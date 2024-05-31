@@ -50,29 +50,29 @@ public class MemberJoinController extends HttpServlet{
 			String nick = req.getParameter("nick");
 			String phone = req.getParameter("phone");
 			String email = req.getParameter("email");
-//			Part picUrl =req.getPart("profile");
+			Part picUrl =req.getPart("profile");
 			
 			
-//			String changeName ="";
-//			if(picUrl.getSize() >0 ) {//profile!=null로 검사하면 안됨 파일첨부안해도 profile객체가 만들어지기 때문
-//				//사진파일을 서버에 저장하기
-//				String originFileName = picUrl.getSubmittedFileName();
-//				InputStream is = picUrl.getInputStream();
-//				
-//				String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\";
-//				String random = UUID.randomUUID().toString();
-//				String ext = originFileName.substring(originFileName.lastIndexOf("."));
-//				changeName = System.currentTimeMillis() + "_" + random + ext;
-//				FileOutputStream fos = new FileOutputStream(path + changeName);
-//				
-//				byte[] buf = new byte[1024];
-//				int size = 0;
-//				while( (size=is.read(buf)) != -1 ) {
-//					fos.write(buf , 0, size);
-//				}
-//				is.close();
-//				fos.close();
-//			}
+			String changeName ="";
+			if(picUrl.getSize() >0 ) {//profile!=null로 검사하면 안됨 파일첨부안해도 profile객체가 만들어지기 때문
+				//사진파일을 서버에 저장하기
+				String originFileName = picUrl.getSubmittedFileName();
+				InputStream is = picUrl.getInputStream();
+				
+				String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\";
+				String random = UUID.randomUUID().toString();
+				String ext = originFileName.substring(originFileName.lastIndexOf("."));
+				changeName = System.currentTimeMillis() + "_" + random + ext;
+				FileOutputStream fos = new FileOutputStream(path + changeName);
+				
+				byte[] buf = new byte[1024];
+				int size = 0;
+				while( (size=is.read(buf)) != -1 ) {
+					fos.write(buf , 0, size);
+				}
+				is.close();
+				fos.close();
+			}
 			
 			MemberVo vo = new MemberVo();
 			vo.setId(id);
@@ -82,7 +82,7 @@ public class MemberJoinController extends HttpServlet{
 			vo.setName(name);
 			vo.setPhone(phone);
 			vo.setEmail(email);
-//			vo.setPicUrl(changeName);
+			vo.setPicUrl(changeName);
 			System.out.println("여기는  vo아래"+vo);
 		
 			

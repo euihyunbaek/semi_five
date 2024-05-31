@@ -25,6 +25,13 @@ public class MemberDao {
 		System.out.println("check id dao"+id);
 		return ss.selectOne("MemberMapper.checkIdDup",id); 		
 	}
+
+	public int quit(SqlSession ss, String no) {
+		System.out.println("check quit member no: "+no);
+		return ss.update("MemberMapper.quit",no);
+		
+		
+	}
 }
 
 

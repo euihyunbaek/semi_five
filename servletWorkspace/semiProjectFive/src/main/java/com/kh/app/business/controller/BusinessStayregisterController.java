@@ -88,6 +88,9 @@ public class BusinessStayregisterController extends HttpServlet {
 			
 			System.out.println(loginBizMemberVo);
 			System.out.println(vo);
+			
+			
+			
 			// 데이터 꺼내기(사진)
 			Collection<Part> parts = req.getParts();
 			List<Part> fileList = new ArrayList<Part>();

@@ -26,6 +26,12 @@
         </a>
     
     </c:when>
+    <c:when test="${sessionScope.loginBizMemberVo != null}">
+        <a href="/app//business/mypage" class="mypage">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    
+    </c:when>
 
     <c:otherwise>
         <a href="/app/login" class="mypage">
@@ -49,7 +55,7 @@
             </button>
     </div>
     <div class="homepage-image">
-        <img src="app/resources/img/homepage.png" alt="강아지">
+        <img src="/app/resources/img/homepage.png" alt="강아지">
     </div>
 
 
@@ -57,14 +63,15 @@
 
     <main class="main-content">
         <section class="container">
-            <a href="../stay/stay_detail.html">
+        <c:forEach items="${voList}" var="vo">
+            <a href="/app/board/detail?no=${vo.no}">
                 <div class="item">
                     <div class="img-container">
                         <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="숙소 사진">
                     </div>
                     <div class="stay-info-container">
                         <div class="stay-name">
-                            <span>숙소이름</span>
+                            <span>${vo.storeName}</span>
                         </div>
                         <div class="rate">
                             <span>
@@ -72,18 +79,22 @@
                                 <span class="score">4.5</span>
                             </span>
                             <span class="count">
-                                (150)
+                                (10)
                             </span>
                         </div>
-                        <div class="stay-cate">호텔</div>
+                        <div class="stay-cate">${vo.stayCategory}</div>
                         <div class="stay-location">
                             <i class="fa-solid fa-location-dot"></i>
-                            <span class="location">호산빌딩</span>
+                            <span class="location">${vo.address}</span>
                         </div>
-                        <div class="price">100,000원~</div>
+                        <div class="price">${vo.price}</div>
                     </div>
                 </div>
             </a>
+            </c:forEach>
+            
+            
+            
             <a href="#">
                 <div class="item">
                     <div class="img-container">
