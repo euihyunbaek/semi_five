@@ -91,6 +91,25 @@ public boolean checkIdDup(String id) throws Exception {
 	ss.close();
 	return result == 0;
 }
+
+//회원탈퇴
+public int quit(String no) throws Exception {
+	SqlSession ss = getSqlSession();
+	
+    int result = dao.quit(ss, no);
+    
+    if(result == 1) {
+       ss.commit();
+    } else {
+       ss.rollback();
+    }
+    ss.close();
+    
+    return result;
+
+
+
+}
    
 	
 }

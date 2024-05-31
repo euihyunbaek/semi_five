@@ -98,6 +98,7 @@ public class BusinessStayregisterController extends HttpServlet {
 			
 			
 			// 데이터 꺼내기(사진 여러장)
+
 			Collection<Part> parts = req.getParts();
 			List<Part> fileList = new ArrayList<Part>();
 			for(Part part : parts) {

@@ -16,7 +16,7 @@ public class MemberLogoutController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		session.setAttribute("alertMsg", "로그아웃완료");
-		session.removeAttribute("loginAdminVo");
+		session.removeAttribute("loginMemberVo");
 		resp.sendRedirect("/app/home");
 		
 	
