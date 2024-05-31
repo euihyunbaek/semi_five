@@ -19,7 +19,7 @@
     <main>
       <section>
 
-        <form action="/app/member/join" method="post">
+        <form action="/app/member/join" method="post" enctype="multipart/form-data">
             <div> 
               <label for="name">이름</label>
               <input type="text" id="userName" name="name" placeholder="성함을 입력해주세요" required>
