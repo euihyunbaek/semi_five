@@ -29,17 +29,29 @@
       <form action="" method="post" id="register-form" enctype="multipart/form-data">
         <fieldset id="essential-info">
           <legend>필수정보</legend>
-          <label for="name" id="name-label">상호명: <input type="text" id="name" placeholder="상호명 입력" required></label>
-          <label for="tel" id="tel-label">전화번호: <input type="tel" id="tel" placeholder="전화번호 입력" required pattern="^0[1-6][0-4]?\d{3,4}\d{4}$"></label>
-          <label for="address" id="address-label">주소: <input type="text" id="address" placeholder="숙박업소 주소 입력" required></label>
-          <label for="webpage" id="webpage-label">홈페이지: <input type="url" id="webpage" placeholder="홈페이지 입력"></label>
-          <label for="email" id="email-label">EMAIL: <input type="email" id="email" placeholder="올바른 이메일주소 입력" pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$"></label>
-          <label for="business-number" id="business-number-label">사업자등록번호: <input type="text" id="business-number" placeholder="사업자등록번호 입력" required pattern="\d{10}"></label>
+          <label for="name" id="name-label">
+          	상호명: <input type="text" name="name" id="name" placeholder="상호명 입력" required>
+          </label>
+          <label for="tel" id="tel-label">
+          	전화번호: <input type="tel" name="phone" id="tel" placeholder="전화번호 입력" required pattern="^0[1-6][0-4]?\d{3,4}\d{4}$">
+          </label>
+          <label for="address" id="address-label">
+          	주소: <input type="text" name="address" id="address" placeholder="숙박업소 주소 입력" required>
+          </label>
+          <label for="webpage" id="webpage-label">
+          	홈페이지: <input type="url" name="webpage" id="webpage" placeholder="홈페이지 입력">
+          </label>
+          <label for="email" id="email-label">
+          	EMAIL: <input type="email" name="email" id="email" placeholder="올바른 이메일주소 입력" pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$">
+          </label>
+          <label for="business-number" id="business-number-label">
+          	사업자등록번호: <input type="text" name="business-number" id="business-number" placeholder="사업자등록번호 입력" required pattern="\d{10}">
+          </label>
         </fieldset>
         <fieldset id="accomo-info">
           <legend>숙박업소 상세정보</legend>
           <label for="dropdown">숙박업소 종류:
-            <select name="acommo-type" id="dropdown" required>
+            <select name="accomo-type" id="dropdown" required>
               <option value="">(선택하세요)</option>
               <option value="1">호텔</option>
               <option value="2">펜션</option>
@@ -58,10 +70,10 @@
           </label>
           물놀이 가능 여부:
           <label for="waterplay-ok">
-            <input type="radio" name="waterplay" id="waterplay-ok" class="inline" value="1"> 물놀이 가능
+            <input type="radio" name="waterplay" id="waterplay-ok" class="inline" value="Y"> 물놀이 가능
           </label>
           <label for="waterplay-notok">
-            <input type="radio" name="waterplay" id="waterplay-notok" class="inline" value="2" required> 물놀이 불가능
+            <input type="radio" name="waterplay" id="waterplay-notok" class="inline" value="N" required> 물놀이 불가능
           </label>
           허용 반려견 종류:
           <label for="small">
