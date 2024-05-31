@@ -28,7 +28,7 @@
     </header>
 
     <div class="member-profile-wrap">
-        <img src="/img/member/profile/defaultProfile.jpg" alt="프로필사진">
+        <img src="/app/resources/img/member/profile/defaultProfile.jpg" alt="프로필사진">
     </div>
     <div class="member-info">
         <div class="member-nick"> ${loginMemberVo.nick} </div>

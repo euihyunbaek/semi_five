@@ -67,7 +67,7 @@
             </div>
             <div>
               <label>프로필사진</label>
-              <input type="file" name="profile" >
+              <input type="file" name="picUrl" >
             </div>  
 
 
