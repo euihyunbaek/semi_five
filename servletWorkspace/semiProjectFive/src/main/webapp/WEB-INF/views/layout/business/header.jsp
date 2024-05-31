@@ -17,8 +17,8 @@
         <img id="login-img" src="./resources/img/abc3.png" width="40px" height="40px" alt="로그인사진">
       </div>
       <div id="login-info-space">
-      	<c:if test="${not empty sessionScope.loginMemberVo}">
-      		<span>${sessionScope.loginMemberVo.nick} </span>
+      	<c:if test="${not empty sessionScope.loginBizMemberVo}">
+      		<span>${sessionScope.loginBizMemberVo.nick} </span>
       	</c:if>
         님 환영합니다!
       </div>

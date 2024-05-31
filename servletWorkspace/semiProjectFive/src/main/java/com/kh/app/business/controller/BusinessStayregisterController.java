@@ -73,6 +73,9 @@ public class BusinessStayregisterController extends HttpServlet {
 			String stayCode = req.getParameter("accomo-type");
 			String waterPlayYn = req.getParameter("waterplay");
 			String typeDog = req.getParameter("dog-size");
+			String roomName = req.getParameter("room");
+			String capacity = req.getParameter("capacity");
+			String price = req.getParameter("price");
 			
 			StayVo vo = new StayVo();
 			vo.setStoreName(storeName);
@@ -85,13 +88,17 @@ public class BusinessStayregisterController extends HttpServlet {
 			vo.setStayCode(stayCode);
 			vo.setWaterPlayYn(waterPlayYn);
 			vo.setTypeDog(typeDog);
+			vo.setRoomName(roomName);
+			vo.setCapacity(capacity);
+			vo.setPrice(price);
+			
 			
 			System.out.println(loginBizMemberVo);
 			System.out.println(vo);
 			
 			
-			
-			// 데이터 꺼내기(사진)
+			// 데이터 꺼내기(사진 여러장)
+
 			Collection<Part> parts = req.getParts();
 			List<Part> fileList = new ArrayList<Part>();
 			for(Part part : parts) {
@@ -100,7 +107,9 @@ public class BusinessStayregisterController extends HttpServlet {
 				}
 			}
 			
-			//서버에 파일 업로드
+			System.out.println(fileList);
+			
+			//서버에 파일 업로드 (여러장)
 			List<StayPicVo> picVoList = new ArrayList<StayPicVo>();
 			for(Part f : fileList) {
 				StayPicVo picVo = FileUpload.safeFile(f);

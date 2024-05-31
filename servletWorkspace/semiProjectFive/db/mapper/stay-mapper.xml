@@ -17,6 +17,10 @@
 	    , STAY_CODE
 	    , WATER_PLAY_YN
 	    , TYPE_DOG
+	    , ROOM_NAME
+    	, CAPACITY
+    	, PRICE
+    	, THUMBNAIL
     )
     VALUES 
     (
@@ -31,6 +35,10 @@
 	    , #{stayCode}
 	    , #{waterPlayYn}
 	    , #{typeDog}
+	    , #{roomName}
+	    , #{capacity}
+	    , #{price}
+	    , #{thumbnail}
 	)
   </insert>
   

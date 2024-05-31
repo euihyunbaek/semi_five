@@ -13,6 +13,10 @@ public class StayVo {
 	private String businessMemberNo;
 	private String waterPlayYn;
 	private String typeDog;
+	private String roomName;
+	private String capacity;
+	private String price;
+	private String thumbnail;
 	private String delYn;
 	
 	//NoArgConstructor
@@ -23,7 +27,7 @@ public class StayVo {
 	//AllArgsConstructor
 	public StayVo(String no, String storeName, String address, String internetAd, String phone, String email,
 			String stayCode, String businessNo, String businessMemberNo, String waterPlayYn, String typeDog,
-			String delYn) {
+			String roomName, String capacity, String price, String thumbnail, String delYn) {
 		this.no = no;
 		this.storeName = storeName;
 		this.address = address;
@@ -35,10 +39,14 @@ public class StayVo {
 		this.businessMemberNo = businessMemberNo;
 		this.waterPlayYn = waterPlayYn;
 		this.typeDog = typeDog;
+		this.roomName = roomName;
+		this.capacity = capacity;
+		this.price = price;
+		this.thumbnail = thumbnail;
 		this.delYn = delYn;
 	}
 
-	//getters and setters
+	// getters and setters
 	public String getNo() {
 		return no;
 	}
@@ -127,6 +135,38 @@ public class StayVo {
 		this.typeDog = typeDog;
 	}
 
+	public String getRoomName() {
+		return roomName;
+	}
+
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
+
+	public String getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(String capacity) {
+		this.capacity = capacity;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
 	public String getDelYn() {
 		return delYn;
 	}
@@ -140,8 +180,9 @@ public class StayVo {
 		return "StayVo [no=" + no + ", storeName=" + storeName + ", address=" + address + ", internetAd=" + internetAd
 				+ ", phone=" + phone + ", email=" + email + ", stayCode=" + stayCode + ", businessNo=" + businessNo
 				+ ", businessMemberNo=" + businessMemberNo + ", waterPlayYn=" + waterPlayYn + ", typeDog=" + typeDog
+				+ ", roomName=" + roomName + ", capacity=" + capacity + ", price=" + price + ", thumbnail=" + thumbnail
 				+ ", delYn=" + delYn + "]";
 	}
+
 	
-	
-}
+}//class
