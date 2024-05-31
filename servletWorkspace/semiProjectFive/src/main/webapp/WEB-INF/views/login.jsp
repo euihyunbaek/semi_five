@@ -31,7 +31,7 @@
             </div>
             <button type="submit">Login</button>
         </form>
-        <form action="/app/biz/login" method="post" id="bizLoginForm">
+        <form action="/app/business/login" method="post" id="bizLoginForm">
             <div class="input-group">
                 <label for="username">사업자 아이디</label>
                 <input type="text" id="userId" name="id" placeholder="아이디를 입력하세요">

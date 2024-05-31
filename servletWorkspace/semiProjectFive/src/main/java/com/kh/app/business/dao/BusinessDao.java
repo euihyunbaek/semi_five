@@ -13,6 +13,8 @@ public class BusinessDao {
 	
 	//로그인
 	public BusinessMemberVo login(SqlSession ss, BusinessMemberVo vo) {
+		System.out.println("dao vo: "+vo);
 		return ss.selectOne("BusinessMapper.login", vo);
+
 	}
 }
