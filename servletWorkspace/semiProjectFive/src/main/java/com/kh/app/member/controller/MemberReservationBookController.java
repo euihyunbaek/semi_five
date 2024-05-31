@@ -1,4 +1,4 @@
-package com.kh.app.business.controller;
+package com.kh.app.member.controller;
 
 import java.io.IOException;
 
@@ -10,23 +10,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.kh.app.business.vo.BusinessMemberVo;
+import com.kh.app.member.vo.MemberVo;
 
-@WebServlet("/business/mypage")
-public class BusinessMypageController extends HttpServlet {
-
+@WebServlet("/reservation/book")
+public class MemberReservationBookController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		try {
 			HttpSession session = req.getSession();
-			BusinessMemberVo loginBizMemberVo = (BusinessMemberVo) session.getAttribute("loginMemberVo");
+			MemberVo loginMemberVo = (MemberVo) session.getAttribute("loginMemberVo");
 			
 			//로그인 하지 않고 접근하면 에러
-			if(loginBizMemberVo == null) {
+			if(loginMemberVo == null) {
 				session.setAttribute("alertMsg", "로그인 하셔야 볼 수 있습니다.");
 				resp.sendRedirect("/app/business/login");
 			} else {
-				req.getRequestDispatcher("/WEB-INF/views/business/mypage-business.jsp").forward(req, resp);
+				req.getRequestDispatcher("/WEB-INF/views/business/stay-register.jsp").forward(req, resp);
 			}
 			
 			
@@ -35,6 +34,11 @@ public class BusinessMypageController extends HttpServlet {
 			req.setAttribute("errMsg", e.getMessage());
 			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
 		}
-		
-	}//method
-}//class
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
+}

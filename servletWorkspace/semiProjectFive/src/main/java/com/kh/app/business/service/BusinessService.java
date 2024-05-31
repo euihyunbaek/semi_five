@@ -64,11 +64,11 @@ public class BusinessService {
 		
 		//DAO 호출
 		SqlSession ss = getSqlSession();
-		BusinessMemberVo loginMemberVo = dao.login(ss, vo);
+		BusinessMemberVo loginBizMemberVo = dao.login(ss, vo);
 		System.out.println("service vo: "+vo);
 
 		ss.close();
 		
-		return loginMemberVo;
+		return loginBizMemberVo;
 	}
 }
