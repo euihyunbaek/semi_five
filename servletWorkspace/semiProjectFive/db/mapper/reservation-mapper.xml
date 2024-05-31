@@ -3,5 +3,30 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ReservationMapper">
-  
+  <insert id="book">
+  	INSERT INTO RESERVATION
+	(
+	RESERVATION_ID
+	, USER_NO
+	, CHECK_IN_DATE
+	, CHECK_OUT_DATE
+	, TOTAL_GUEST
+	, TOTAL_PRICE
+	, STAY_NO
+	, RESERVATION_STATUS
+	, COUNT_DOG
+	)
+	VALUES
+	(
+	SEQ_RESERVATION.NEXTVAL
+	, #{userNo}
+	, #{checkInDate}
+	, #{checkOutDate}
+	, #{totalGuest}
+	, #{totalPrice}
+	, #{stayNo}
+	, #{reservationStatus}
+	, #{countDog}
+	)
+  </insert>
 </mapper>

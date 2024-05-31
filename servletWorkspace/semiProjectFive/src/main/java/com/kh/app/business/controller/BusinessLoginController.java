@@ -41,12 +41,12 @@ public class BusinessLoginController extends HttpServlet {
 			
 			//비즈니스 로직
 			BusinessService bs = new BusinessService();
-			BusinessMemberVo loginMemberVo = bs.login(vo);
+			BusinessMemberVo loginBizMemberVo = bs.login(vo);
 			
 			//결과 처리
-			if(loginMemberVo != null) {
+			if(loginBizMemberVo != null) {
 				session.setAttribute("alertMsg", "로그인성공!!");
-				session.setAttribute("loginMemberVo", loginMemberVo);
+				session.setAttribute("loginMemberVo", loginBizMemberVo);
 			} else {
 				session.setAttribute("alertMsg", "로그인 실패...");
 			}
