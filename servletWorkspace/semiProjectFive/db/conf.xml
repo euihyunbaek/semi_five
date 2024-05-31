@@ -27,5 +27,6 @@
   	<mapper resource="/mapper/admin-member-mapper.xml" />
   	<mapper resource="/mapper/admin-business-mapper.xml" />
   	<mapper resource="/mapper/stay-mapper.xml" />  	
+  	<mapper resource="/mapper/reservation-mapper.xml" />
   </mappers>
 </configuration>
