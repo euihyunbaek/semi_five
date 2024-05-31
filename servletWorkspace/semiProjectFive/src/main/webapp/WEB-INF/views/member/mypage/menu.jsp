@@ -27,9 +27,19 @@
         </div>
     </header>
 
+<c:choose>
+
+<c:when test="${loginMemberVo.picUrl != null}">
     <div class="member-profile-wrap">
-        <img src="/app/resources/img/member/profile/defaultProfile.jpg" alt="프로필사진">
+        <img src="/app/resources/upload/memberprofile/${loginMemberVo.picUrl}" alt="프로필사진">
     </div>
+</c:when>
+   <c:when test="${loginMemberVo.picUrl == null}">
+       <div class="member-profile-wrap">
+        <img src="/app/resources/img/member/profile/defaultProfile.jpg" alt="프로필사진">   </div>
+   </c:when>
+
+</c:choose>
     <div class="member-info">
         <div class="member-nick"> ${loginMemberVo.nick} </div>
         <div class="member-email"> ${loginMemberVo.email}</div>

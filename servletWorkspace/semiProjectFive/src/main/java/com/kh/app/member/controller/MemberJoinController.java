@@ -55,7 +55,8 @@ public class MemberJoinController extends HttpServlet{
 	            String originFileName = picUrl.getSubmittedFileName();
 	            InputStream is = picUrl.getInputStream();
 
-	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\memberprofile\\";
+//	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\memberprofile\\";
+	            String path = "D:\\SEMIFIVE\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\memberprofile\\";
 	            String random = UUID.randomUUID().toString();
 	            String ext = originFileName.substring(originFileName.lastIndexOf("."));
 	            changeName = System.currentTimeMillis() + "_" + random + ext;
