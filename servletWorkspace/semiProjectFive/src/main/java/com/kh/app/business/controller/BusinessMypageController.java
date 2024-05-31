@@ -19,7 +19,7 @@ public class BusinessMypageController extends HttpServlet {
 		
 		try {
 			HttpSession session = req.getSession();
-			BusinessMemberVo loginBizMemberVo = (BusinessMemberVo) session.getAttribute("loginMemberVo");
+			BusinessMemberVo loginBizMemberVo = (BusinessMemberVo) session.getAttribute("loginBizMemberVo");
 			
 			//로그인 하지 않고 접근하면 에러
 			if(loginBizMemberVo == null) {

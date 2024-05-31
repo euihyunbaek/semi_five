@@ -25,7 +25,7 @@ public class MemberReservationBookController extends HttpServlet {
 				session.setAttribute("alertMsg", "로그인 하셔야 볼 수 있습니다.");
 				resp.sendRedirect("/app/business/login");
 			} else {
-				req.getRequestDispatcher("/WEB-INF/views/business/stay-register.jsp").forward(req, resp);
+				req.getRequestDispatcher("/WEB-INF/views/business/login.jsp").forward(req, resp);
 			}
 			
 			
@@ -38,7 +38,18 @@ public class MemberReservationBookController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		
+		//세션에서 가져오기
+		HttpSession session = req.getSession();
+		MemberVo loginMemberVo = (MemberVo)session.getAttribute("loginMemberVo");
+		
+		//데이터 꺼내기
+		String userNo = loginMemberVo.getNo();
+		String checkInDate = req.getParameter("checkin");
+		String checkOutDate = req.getParameter("checkout");
+		String totalGuest = req.getParameter("total-guest");
+		String totalPrice = req.getParameter("total-price");
+		
+		
 	}
 }

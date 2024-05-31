@@ -37,16 +37,18 @@ public class BusinessLoginController extends HttpServlet {
 			BusinessMemberVo vo = new BusinessMemberVo();
 			vo.setId(id);
 			vo.setPwd(pwd);
-			System.out.println("controller vo: "+vo);
+			System.out.println("controller vo : "+vo);
 			
 			//비즈니스 로직
 			BusinessService bs = new BusinessService();
 			BusinessMemberVo loginBizMemberVo = bs.login(vo);
 			
+			System.out.println("controller loginBizMemberVo : "+ loginBizMemberVo);
+			
 			//결과 처리
 			if(loginBizMemberVo != null) {
 				session.setAttribute("alertMsg", "로그인성공!!");
-				session.setAttribute("loginMemberVo", loginBizMemberVo);
+				session.setAttribute("loginBizMemberVo", loginBizMemberVo);
 			} else {
 				session.setAttribute("alertMsg", "로그인 실패...");
 			}
