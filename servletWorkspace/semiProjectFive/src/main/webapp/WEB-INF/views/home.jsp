@@ -26,12 +26,7 @@
         </a>
     
     </c:when>
-    <c:when test="${sessionScope.loginBusinessMemberVo != null}">
-        <a href="/app/business/menu" class="mypage">
-            <i class="fa-solid fa-bars"></i>
-        </a>
-    
-    </c:when>
+
     <c:otherwise>
         <a href="/app/login" class="mypage">
             <i class="fa-solid fa-bars"></i>
