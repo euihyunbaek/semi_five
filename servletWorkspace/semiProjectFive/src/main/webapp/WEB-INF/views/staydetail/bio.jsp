@@ -9,7 +9,6 @@
     <%@ include file="/WEB-INF/views/layout/util.jsp" %>
     <link rel="stylesheet" href="/app/resources/css/staydetail/staydetail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="./stay_detail.js"></script>
 </head>
 <body>
     <%@ include file="/WEB-INF/views/layout/staydetail/header.jsp" %>
