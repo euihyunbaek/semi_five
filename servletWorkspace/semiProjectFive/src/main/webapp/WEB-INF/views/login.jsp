@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-        <%@ include file="/WEB-INF/views/layout/util.jsp" %>
+    <%@ include file="/WEB-INF/views/layout/util.jsp" %>
     
     <link rel="stylesheet" href="/app/resources/css/login.css">
     <script defer src="/app/resources/js/login.js"></script>
@@ -30,6 +30,7 @@
                 <input type="password" id="password" name="pwd" placeholder="비밀번호를 입력하세요">
             </div>
             <button type="submit">Login</button>
+            <span><a href="/app/member/join">회원가입 하러 가기</a></span>
         </form>
         <form action="/app/business/login" method="post" id="bizLoginForm">
             <div class="input-group">
@@ -41,6 +42,8 @@
                 <input type="password" id="password" name="pwd" placeholder="비밀번호를 입력하세요">
             </div>
             <button type="submit">Login</button>
+            <span><a href="/app/business/join">사업자 회원가입 하러 가기</a></span>
+            
         </form>
         <form action="/app/admin/login" method="post" id="adminLoginForm">
             <div class="input-group">

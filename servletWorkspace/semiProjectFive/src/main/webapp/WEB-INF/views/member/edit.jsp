@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원정보수정</title>
     <link rel="stylesheet" href="/app/resources/css/member/join.css">
-    <script defer src="/app/resources/js/member/join.js"></script>
+    <script defer src="/app/resources/js/member/edit.js"></script>
 	<%@ include file="/WEB-INF/views/layout/util.jsp" %>
 
 	
@@ -75,7 +75,7 @@
 
             <div>
               <button type="submit"id="memberjoin" >정보 수정하기</button>
-              <button type ="button" onclick = "location.href = '/app/member/quit'">탈퇴하기</button>
+              <button type ="button" onclick = "confirmQuit()">탈퇴하기</button>
               
             </div>
 

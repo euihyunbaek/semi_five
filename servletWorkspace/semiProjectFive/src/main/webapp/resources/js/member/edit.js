@@ -1,9 +1,6 @@
 /**
  * 
  */
-/**
- * 
- */
 
 console.log("zzz");
 
@@ -31,9 +28,6 @@ function checkDup() {
   $.ajax(obj);
 }
 
-
-
-//회원탈퇴확인창
 function confirmQuit(){
 	
 	if(window.confirm("정말 탈퇴하시겠습니까?")){
