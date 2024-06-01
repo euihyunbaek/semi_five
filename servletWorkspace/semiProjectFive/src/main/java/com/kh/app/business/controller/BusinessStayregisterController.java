@@ -79,6 +79,7 @@ public class BusinessStayregisterController extends HttpServlet {
 			String roomName = req.getParameter("room");
 			String capacity = req.getParameter("capacity");
 			String price = req.getParameter("price");
+			String bio = req.getParameter("bio");
 			
 			///-------------------썸네일사진 꺼내기----------------------------///
 	        Part thumbnail = req.getPart("thumbnail");
@@ -123,8 +124,9 @@ public class BusinessStayregisterController extends HttpServlet {
 			vo.setRoomName(roomName);
 			vo.setCapacity(capacity);
 			vo.setPrice(price);
-	        vo.setThumbnail(changeName);
-
+	        vo.setBio(bio);
+			vo.setThumbnail(changeName);
+	        
 			
 			System.out.println(loginBizMemberVo);
 			System.out.println(vo);

@@ -42,9 +42,12 @@ public class BusinessJoinController extends HttpServlet {
 			int result = bs.join(vo);
 			
 			//결과처리
+			
 			if(result == 1) {
+				System.out.println("iffff");
 				req.setAttribute("alertMsg", "회원가입 성공 !!");
 			} else {
+				System.out.println("elseee");
 				req.setAttribute("alertMsg", "회원가입 실패 ...");
 			}
 			

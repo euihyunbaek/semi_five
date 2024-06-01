@@ -10,7 +10,7 @@
    	<%@ include file="/WEB-INF/views/layout/util.jsp" %>
    	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="/app/resources/js/member/menu.js"></script>
+    <script defer src="/app/resources/js/member/edit.js"></script>
    	 <link rel="stylesheet" href="/app/resources/css/memberMenuEdit.css">
 </head>
 <body>
@@ -128,7 +128,7 @@
 
             <div>
               <button type="submit"id="memberjoin" >정보 수정하기</button>
-              <button type ="button" onclick = "location.href = '/app/member/quit'">탈퇴하기</button>
+              <button type ="button" onclick = "confirmQuit()">탈퇴하기</button>
               
             </div>
 
