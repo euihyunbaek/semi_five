@@ -57,4 +57,18 @@ public class StayService {
 	
 	
 	}
+	
+	//숙소상세조회
+	public StayVo getStayByNo(String no) throws Exception {
+		
+		SqlSession ss = getSqlSession();
+		StayVo vo = dao.getStayByNo(ss,no);
+		System.out.println("Service  staydetailvo: "+vo);
+
+		ss.close();
+		return vo;
+	
+	
+	
+	}
 }

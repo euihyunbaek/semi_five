@@ -64,7 +64,7 @@
     <main class="main-content">
         <section class="container">
         <c:forEach items="${voList}" var="vo">
-            <a href="/app/board/detail?no=${vo.no}">
+            <a href="/app/stay/detail/bio?no=${vo.no}">
                 <div class="item">
                     <div class="img-container">
                         <img src="/app/resources/upload/thumbnail/${vo.thumbnail}" alt="숙소 썸네일">

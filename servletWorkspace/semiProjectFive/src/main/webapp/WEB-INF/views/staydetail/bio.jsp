@@ -14,6 +14,7 @@
     <%@ include file="/WEB-INF/views/layout/staydetail/header.jsp" %>
     
     <%@ include file="/WEB-INF/views/layout/staydetail/thumbnail.jsp" %>
+    <%@ include file="/WEB-INF/views/layout/staydetail/stayinfo.jsp" %>
 
     <%@ include file="/WEB-INF/views/layout/staydetail/nav.jsp" %>
 
@@ -36,7 +37,7 @@
                         </div>
                         <div class="internet-address">
                             <i class="fa-solid fa-globe"></i>
-                            <span>${requestScope.vo.internetAd}</span>
+                            <a href="${requestScope.vo.internetAd}">${requestScope.vo.internetAd}</a>
                         </div>
 
                     </div>
@@ -46,12 +47,14 @@
                         <div class="notice-title">
                             <i class="fa-solid fa-bullhorn"></i>
                             <!-- 공지사항 제목 -->
-								숙소 소개                           
+								숙소 소개                  
+								<br>         
                         </div>
                         <div class="notice-content">
+                        <br>
                             <!-- 공지사항 내용 -->
                             ${requestScope.vo.bio}
-                            
+                            <br>
                         </div>
 
                     </div>

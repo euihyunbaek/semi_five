@@ -24,4 +24,9 @@ public class StayDao {
 	
 	
 	}
+
+	public StayVo getStayByNo(SqlSession ss, String no) {
+
+		return ss.selectOne("StayMapper.getStayByNo",no);
+	}
 }

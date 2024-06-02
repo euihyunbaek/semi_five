@@ -65,7 +65,7 @@
 	SELECT * FROM DUAL
   </insert>
   
-     <select id="selectStayList" resultType="com.kh.app.stay.vo.StayVo">
+    <select id="selectStayList" resultType="com.kh.app.stay.vo.StayVo">
     SELECT S.NO, S.STORE_NAME, S.ADDRESS ,S.INTERNET_AD,S.EMAIL,S.STAY_CODE,S.BUSINESS_MEMBER_NO,S.PHONE, S.WATER_PLAY_YN ,S.THUMBNAIL ,S.PRICE ,S.ROOM_NAME,S.CAPACITY ,S.BIO,C.NAME AS CATEGORY_NAME ,S.TYPE_DOG,D.DOG_SIZE
     FROM STAY S
     JOIN STAY_CATEGORY C ON S.STAY_CODE = C.NO
@@ -74,6 +74,21 @@
     ORDER BY S.NO DESC
 
   </select>
+  
+  
+    <select id="getStayByNo" resultType="com.kh.app.stay.vo.StayVo">
+    SELECT  S.NO,S.STORE_NAME, S.ADDRESS ,S.INTERNET_AD,S.EMAIL,S.STAY_CODE,S.BUSINESS_MEMBER_NO,S.PHONE, S.WATER_PLAY_YN ,S.THUMBNAIL ,S.PRICE ,S.ROOM_NAME,S.CAPACITY ,S.BIO,C.NAME AS CATEGORY_NAME ,S.TYPE_DOG,D.DOG_SIZE
+    FROM STAY S
+    JOIN STAY_CATEGORY C ON S.STAY_CODE = C.NO
+    JOIN SIZE_DOG D ON S.TYPE_DOG = D.NO
+    WHERE S.DEL_YN = 'N'
+    AND S.NO = #{no, jdbcType=NUMERIC}
+    ORDER BY S.NO DESC
+
+  </select>
+  
+  
+  
   
   
 </mapper>
