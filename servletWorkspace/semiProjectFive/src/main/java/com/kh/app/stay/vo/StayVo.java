@@ -13,23 +13,23 @@ public class StayVo {
 	private String businessMemberNo;
 	private String waterPlayYn;
 	private String typeDog;
+	private String dogSize;
 	private String roomName;
 	private String capacity;
 	private String price;
 	private String thumbnail;
 	private String delYn;
 	private String bio;
-	
-	
-	
-	
+	//
+	private String categoryName;
 	public StayVo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public StayVo(String no, String storeName, String address, String internetAd, String phone, String email,
 			String stayCode, String businessNo, String businessMemberNo, String waterPlayYn, String typeDog,
-			String roomName, String capacity, String price, String thumbnail, String delYn, String bio) {
+			String dogSize, String roomName, String capacity, String price, String thumbnail, String delYn, String bio,
+			String categoryName) {
 		super();
 		this.no = no;
 		this.storeName = storeName;
@@ -42,20 +42,14 @@ public class StayVo {
 		this.businessMemberNo = businessMemberNo;
 		this.waterPlayYn = waterPlayYn;
 		this.typeDog = typeDog;
+		this.dogSize = dogSize;
 		this.roomName = roomName;
 		this.capacity = capacity;
 		this.price = price;
 		this.thumbnail = thumbnail;
 		this.delYn = delYn;
 		this.bio = bio;
-	}
-	@Override
-	public String toString() {
-		return "StayVo [no=" + no + ", storeName=" + storeName + ", address=" + address + ", internetAd=" + internetAd
-				+ ", phone=" + phone + ", email=" + email + ", stayCode=" + stayCode + ", businessNo=" + businessNo
-				+ ", businessMemberNo=" + businessMemberNo + ", waterPlayYn=" + waterPlayYn + ", typeDog=" + typeDog
-				+ ", roomName=" + roomName + ", capacity=" + capacity + ", price=" + price + ", thumbnail=" + thumbnail
-				+ ", delYn=" + delYn + ", bio=" + bio + "]";
+		this.categoryName = categoryName;
 	}
 	public String getNo() {
 		return no;
@@ -123,6 +117,12 @@ public class StayVo {
 	public void setTypeDog(String typeDog) {
 		this.typeDog = typeDog;
 	}
+	public String getDogSize() {
+		return dogSize;
+	}
+	public void setDogSize(String dogSize) {
+		this.dogSize = dogSize;
+	}
 	public String getRoomName() {
 		return roomName;
 	}
@@ -159,6 +159,27 @@ public class StayVo {
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	@Override
+	public String toString() {
+		return "StayVo [no=" + no + ", storeName=" + storeName + ", address=" + address + ", internetAd=" + internetAd
+				+ ", phone=" + phone + ", email=" + email + ", stayCode=" + stayCode + ", businessNo=" + businessNo
+				+ ", businessMemberNo=" + businessMemberNo + ", waterPlayYn=" + waterPlayYn + ", typeDog=" + typeDog
+				+ ", dogSize=" + dogSize + ", roomName=" + roomName + ", capacity=" + capacity + ", price=" + price
+				+ ", thumbnail=" + thumbnail + ", delYn=" + delYn + ", bio=" + bio + ", categoryName=" + categoryName
+				+ "]";
+	}
+	
+	
+	
+
+	
+
 	
 
 	

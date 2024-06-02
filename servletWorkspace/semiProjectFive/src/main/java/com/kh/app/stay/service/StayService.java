@@ -47,4 +47,14 @@ public class StayService {
 		
 		return result * attResult;
 	}
+
+	public List<StayVo> selectStayList() throws Exception {
+
+	SqlSession ss = getSqlSession();
+	List<StayVo> voList = dao.selectStayList(ss);
+	ss.close();
+	return voList;
+	
+	
+	}
 }
