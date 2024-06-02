@@ -64,30 +64,22 @@
     <main class="main-content">
         <section class="container">
         <c:forEach items="${voList}" var="vo">
-            <a href="/app/board/detail?no=${vo.no}">
+            <a href="/app/stay/detail/bio?no=${vo.no}">
                 <div class="item">
                     <div class="img-container">
-                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="숙소 사진">
+                        <img src="/app/resources/upload/thumbnail/${vo.thumbnail}" alt="숙소 썸네일">
                     </div>
                     <div class="stay-info-container">
                         <div class="stay-name">
                             <span>${vo.storeName}</span>
                         </div>
-                        <div class="rate">
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="score">4.5</span>
-                            </span>
-                            <span class="count">
-                                (10)
-                            </span>
-                        </div>
-                        <div class="stay-cate">${vo.stayCategory}</div>
+
+                        <div class="stay-cate">${vo.categoryName}</div>
                         <div class="stay-location">
                             <i class="fa-solid fa-location-dot"></i>
                             <span class="location">${vo.address}</span>
                         </div>
-                        <div class="price">${vo.price}</div>
+                        <div class="price">${vo.price} 원~</div>
                     </div>
                 </div>
             </a>

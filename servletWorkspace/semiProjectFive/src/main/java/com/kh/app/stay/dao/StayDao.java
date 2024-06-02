@@ -17,4 +17,16 @@ public class StayDao {
 	public int insertStayPic(SqlSession ss, List<StayPicVo> stayPicVoList) {
 		return ss.insert("StayMapper.insertStayPic", stayPicVoList);
 	}
+
+	public List<StayVo> selectStayList(SqlSession ss) {
+		return ss.selectList("StayMapper.selectStayList");
+
+	
+	
+	}
+
+	public StayVo getStayByNo(SqlSession ss, String no) {
+
+		return ss.selectOne("StayMapper.getStayByNo",no);
+	}
 }

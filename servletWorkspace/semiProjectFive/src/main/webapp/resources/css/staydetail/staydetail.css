@@ -272,6 +272,16 @@ main > section > a {
 .notice-title{
   font-weight: bolder;
 }
+.notice-content{
+	
+	display:flex;
+	justify-content: center;
+	align-content: center;
+	padding: 20px;
+	  justify-self: stretch;
+	
+}
+
 
 
   /* stay-detail-photo */

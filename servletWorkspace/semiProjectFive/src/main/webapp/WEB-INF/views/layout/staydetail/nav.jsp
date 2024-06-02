@@ -4,7 +4,7 @@
         <ul>
             <li>
                 <a href="">
-                    <div>홈</div>
+                    <div>숙소 소개</div>
                 </a>
             </li>
             <li>

@@ -189,18 +189,18 @@ footer {
 }
 .img-container img {
   width: 100%;
-  height: 100%;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 10px 0 0 10px;
 }
 .stay-info-container {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  max-width: 200px;
+  max-height: 100%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
 }
 main > section > a {
   text-decoration: none;
@@ -216,6 +216,21 @@ main > section > a {
 .stay-location i {
   color: #007BFF;
 }
+
+.stay-cate{
+	color: gray;
+}
+
+.stay-location{
+	  white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis;
+}
+
+
+
+
+
 .price {
   font-weight: bold;
   color: #007BFF;
