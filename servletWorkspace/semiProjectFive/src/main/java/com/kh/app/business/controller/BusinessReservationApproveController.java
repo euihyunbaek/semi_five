@@ -31,8 +31,8 @@ public class BusinessReservationApproveController extends HttpServlet {
 
 				throw new Exception();
 			}
-			req.getSession().setAttribute("alertMsg", "사업자 가입 요청"+noArr.length+"개 승인 성공");
-			resp.sendRedirect("/app/admin/business/list");
+			req.getSession().setAttribute("alertMsg", "예약 승인 요청"+noArr.length+"개 승인 성공");
+			resp.sendRedirect("/app/business/reservation/list");
 			
 		}catch (Exception e) {
 			e.printStackTrace();

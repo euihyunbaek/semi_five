@@ -15,7 +15,7 @@ import com.kh.app.common.vo.PageVo;
 import com.kh.app.reservation.service.ReservationService;
 import com.kh.app.reservation.vo.ReservationVo;
 
-@WebServlet("/business/reservation-list")
+@WebServlet("/business/reservation/list")
 public class BusinessReservationListController extends HttpServlet {
 	
 	private ReservationService rs;

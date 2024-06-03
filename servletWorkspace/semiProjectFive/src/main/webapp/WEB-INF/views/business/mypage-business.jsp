@@ -41,7 +41,7 @@
       <a id="stay-notice-edit" href="./stay-notice-edit.html"><i class="fi fi-rr-cursor-finger"></i> 공지사항관리</a>
     </div>
     <div class="grid-item">
-      <a id="business-book-list" href="/app/business/reservation-list"><i class="fi fi-rr-list-check"></i> 예약요청관리</a>
+      <a id="business-book-list" href="/app/business/reservation/list"><i class="fi fi-rr-list-check"></i> 예약요청관리</a>
     </div>
     <div class="grid-item">
       <a id="review-reply" href="./review-reply.html"><i class="fi fi-rr-megaphone"></i> 리뷰관리</a>
