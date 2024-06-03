@@ -30,7 +30,7 @@ public class StayDetailBioController extends HttpServlet{
 			String no = req.getParameter("no");
 
 			if(no == null || no.length() == 0) {
-				throw new Exception("조회할 게시글 번호를 입력하세요");
+				throw new Exception("조회할 숙소 번호를 입력하세요");
 			}
 			
 			//복작

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kh.app.stay.service.StayService;
 import com.kh.app.stay.vo.StayPicVo;
+import com.kh.app.stay.vo.StayVo;
 
 @WebServlet("/stay/detail/photo")
 public class StayDetailPhotoController extends HttpServlet{
@@ -26,7 +27,10 @@ public class StayDetailPhotoController extends HttpServlet{
 			
 			String no = req.getParameter("no");
 			List<StayPicVo> picVoList = sts.getStayPic(no);
+			StayVo vo = sts.getStayByNo(no);
 			
+			req.setAttribute("no", no);
+			req.setAttribute("vo", vo);
 			req.setAttribute("picVoList", picVoList);
 			req.getRequestDispatcher("/WEB-INF/views/staydetail/photo.jsp").forward(req, resp);
 		
