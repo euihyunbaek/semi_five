@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'><link rel="stylesheet" href="./business-book-list.css">
-  <script src="./business-book-list.js"></script>
+  <link rel='stylesheet' href='/app/resources/css/business/reservation-list.css'>
+  <script src="/app/resources/js/business/reservation-list.js"></script>
 </head>
 <body>
   <header>

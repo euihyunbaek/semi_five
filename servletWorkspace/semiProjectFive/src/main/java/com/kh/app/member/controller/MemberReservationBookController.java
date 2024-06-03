@@ -75,9 +75,9 @@ public class MemberReservationBookController extends HttpServlet {
 			
 			//결과 처리
 			if(result == 1) {
-				req.setAttribute("alertMsg", "예약 성공!!!");
+				session.setAttribute("alertMsg", "예약 성공!!!");
 			} else {
-				req.setAttribute("alertMsg", "예약 실패...");
+				session.setAttribute("alertMsg", "예약 실패...");
 			}
 			
 			resp.sendRedirect("/app/member/menu");
