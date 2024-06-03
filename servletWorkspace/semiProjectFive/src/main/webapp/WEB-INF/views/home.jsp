@@ -73,7 +73,15 @@
                         <div class="stay-name">
                             <span>${vo.storeName}</span>
                         </div>
-
+                       <div class="rate">
+                            <span>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="score">0.0</span>
+                            </span>
+                            <span class="count">
+                                (0)
+                            </span>
+                        </div>
                         <div class="stay-cate">${vo.categoryName}</div>
                         <div class="stay-location">
                             <i class="fa-solid fa-location-dot"></i>
