@@ -27,4 +27,27 @@
 	, #{countDog}
 	)
   </insert>
+  
+  <select id="selectByBusiness" parameterType="map" resultType="com.kh.app.reservation.vo.ReservationVo">
+  	SELECT * FROM
+  	(
+  	SELECT ROWNUM AS RNUM, T.*
+  	FROM
+  	(
+  	SELECT R.RESERVATION_ID, M.NICK, R.CHECK_IN_DATE, R.CHECK_OUT_DATE, S.ROOM_NAME
+    FROM RESERVATION R
+        JOIN MEMBER M
+        ON R.USER_NO = M.NO
+        JOIN STAY S
+        ON R.STAY_NO = S.NO
+        JOIN BUSINESS_MEMBER B
+        ON B.NO = S.BUSINESS_MEMBER_NO
+    WHERE B.NO = #{no, jdbcType=NUMERIC}
+    )T
+    ) WHERE RNUM BETWEEN #{startNum} AND #{endNum}
+  </select>
+  
+  <select id="getReservationCnt" resultType="int">
+  	SELECT COUNT(RESERVATION_ID) FROM RESERVATION WHERE RESERVATION_STATUS = 1
+  </select>
 </mapper>
