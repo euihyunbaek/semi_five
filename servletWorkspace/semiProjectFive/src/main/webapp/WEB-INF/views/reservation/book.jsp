@@ -10,21 +10,12 @@
     
     <link rel="stylesheet" href="/app/resources/css/reservation/book.css">
     <script defer src="/app/resources/js/reservation/book.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
-    <header class="header">
-        <div class="menu">
-            <a href="마이페이지로 이동" class="mypage">
-                <i class="fa-solid fa-bars"></i>
-            </a>
-        </div>
-        <div>로고</div>
-        <div class="menu">
-            <a href="홈화면" class="mypage">
-                <i class="fa-solid fa-house"></i>
-            </a>
-        </div>
-    </header>
+    <%@ include file="/WEB-INF/views/layout/staydetail/header.jsp" %>
+
 
     <div class="reservation-img-wrap">
         <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20190808_213%2F1565269331998uYNKl_JPEG%2FKakaoTalk_20190707_152929203_23.jpg" alt="">
