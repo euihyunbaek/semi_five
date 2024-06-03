@@ -83,6 +83,7 @@ public class BusinessStayregisterController extends HttpServlet {
 			
 			///-------------------썸네일사진 꺼내기----------------------------///
 	        Part thumbnail = req.getPart("thumbnail");
+			String rootPath = req.getServletContext().getRealPath("/");
 
 	        String changeName = "";
 	        if(thumbnail != null && thumbnail.getSize() > 0) {  
@@ -90,7 +91,10 @@ public class BusinessStayregisterController extends HttpServlet {
 	            InputStream is = thumbnail.getInputStream();
 	            //경로지정(민정노트북절대경로. 각자 테스트할 작업환경에 맞게 수정해야함)
 //	            String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
-	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
+//	            String path = "D:\\SEMIFIVE\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
+	            String path = rootPath+"resources\\upload\\thumbnail\\";
+
+//	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
 	            String random = UUID.randomUUID().toString();
 	            String ext = originFileName.substring(originFileName.lastIndexOf("."));
 	            changeName = System.currentTimeMillis() + "_" + random + ext;
@@ -149,7 +153,7 @@ public class BusinessStayregisterController extends HttpServlet {
 			//서버에 파일 업로드 (여러장)
 			List<StayPicVo> picVoList = new ArrayList<StayPicVo>();
 			for(Part f : fileList) {
-				StayPicVo picVo = FileUpload.safeFile(f);
+				StayPicVo picVo = FileUpload.safeFile(f,rootPath);
 				picVoList.add(picVo);
 			}
 			

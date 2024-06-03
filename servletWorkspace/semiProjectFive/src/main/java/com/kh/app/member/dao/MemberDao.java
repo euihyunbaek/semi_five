@@ -18,6 +18,8 @@ public class MemberDao {
 	}
 
 	public int edit(SqlSession ss, MemberVo vo) {
+		System.out.println("dao vo : "+ vo);
+
 		return ss.update("MemberMapper.edit",vo);
 	}
 

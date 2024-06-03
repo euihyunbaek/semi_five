@@ -22,7 +22,7 @@ public class MemberMenuController extends HttpServlet{
 		MemberVo loginMemberVo = (MemberVo)session.getAttribute("loginMemberVo");
 
 		if(loginMemberVo != null) {
-			req.getRequestDispatcher("/WEB-INF/views/member/mypage/menu.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/member/mypage/edit.jsp").forward(req, resp);
 
 		} else {
 			session.setAttribute("alertMsg", "로그인이 필요합니다.");

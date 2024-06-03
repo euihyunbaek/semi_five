@@ -71,7 +71,8 @@ public int edit(MemberVo vo) throws Exception {
     // DAO 호출
 	SqlSession ss = getSqlSession();
     int result = dao.edit(ss, vo);
-    
+	System.out.println("service vo : "+ vo);
+
     if(result == 1) {
        ss.commit();
     } else {

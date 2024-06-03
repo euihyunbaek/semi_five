@@ -47,7 +47,6 @@
 	 	,PHONE = #{phone}
 	 	,EMAIL = #{email}
 	 	,PIC_URL = #{picUrl}
-	 	
 	WHERE NO = #{no}
 	
 	

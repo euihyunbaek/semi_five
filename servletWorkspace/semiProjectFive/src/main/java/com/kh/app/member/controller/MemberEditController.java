@@ -69,13 +69,16 @@ public class MemberEditController extends HttpServlet {
 			String email = req.getParameter("email");
 			Part picUrl = req.getPart("picUrl");
 			
+			String rootPath = req.getServletContext().getRealPath("/");
+			System.out.println("rootPath : " + rootPath);
+			
 	        String changeName = "";
 	        if(picUrl != null && picUrl.getSize() > 0) {  // picUrl이 null이 아닌지 확인
 	            String originFileName = picUrl.getSubmittedFileName();
 	            InputStream is = picUrl.getInputStream();
 
 //	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\memberprofile\\";
-	            String path = "D:\\SEMIFIVE\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\memberprofile\\";
+	            String path = rootPath+"resources\\upload\\memberprofile\\";
 //	            String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\memberpfofile\\";
 
 	            String random = UUID.randomUUID().toString();
@@ -110,7 +113,7 @@ public class MemberEditController extends HttpServlet {
 			//서비스호출
 			MemberService ms = new MemberService();
 			int result = ms.edit(vo);
-
+			System.out.println("controller vo : "+ vo);
 			//결과	
 			if(result!=1) {
 				throw new Exception("회원정보 수정 실패");			
