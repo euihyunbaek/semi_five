@@ -35,7 +35,9 @@
 					<c:if test="${status.index % 2 == 0}">
 						<img src="/app/resources/upload/stay/${pic.changeName}" alt="Image" />
 					</c:if>
+					
 				</c:forEach>
+						<img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyNDA2MDNfMTA5%2FMDAxNzE3Mzc1Mzc5OTQ5.7qMsHZWlH6bDCJy2L7UgiXT2MIEVSTqxNTW_QgthSOog.gZd_uurOYID3Hbg8RvUGqn0215LwPuzH88MB5itwxjkg.JPEG%2F1000004997.jpg%3Ftype%3Dw1500_60_sharpen" alt="Image" />
 
 			</div>
 
@@ -45,8 +47,9 @@
 				<c:forEach var="pic" items="${picVoList}" varStatus="status">
 					<c:if test="${status.index % 2 != 0}">
 						<img src="/app/resources/upload/stay/${pic.changeName}" alt="Image" />
-					</c:if>
+					</c:if>					
 				</c:forEach>
+						<img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyNDA2MDNfMTIw%2FMDAxNzE3Mzc1MzgxMzQ1.hgLS9alerx4ljMZL4ocO2MoiRm4KMw7V4VW8ia_E7iMg.8Dl6EG72FbiNLDbnxPlESerVUH3B5aWFgqxT9llp930g.JPEG%2F1000005040.jpg%3Ftype%3Dw1500_60_sharpen" alt="Image" />
 			</div>
 
 

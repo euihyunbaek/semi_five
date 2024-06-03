@@ -48,12 +48,12 @@
     <nav class="navbar">
         <ul>
             <li>
-                <a href="">
+                <a href="/app/member/menu">
                     <div>내 정보</div>
                 </a>
             </li>
             <li>
-                <a href="./stay_detail_review/stay_detail_review.html">
+                <a href="/app/member/myreservation">
                     <div> 내 예약 </div>
                 </a>
             </li>
