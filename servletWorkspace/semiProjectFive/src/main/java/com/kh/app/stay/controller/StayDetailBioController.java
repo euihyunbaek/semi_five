@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kh.app.stay.service.StayService;
 import com.kh.app.stay.vo.StayVo;
@@ -43,6 +44,10 @@ public class StayDetailBioController extends HttpServlet{
 			
 			//결과
 			req.setAttribute("vo", vo);
+			
+			//숙소 정보를 세션에 저장
+			HttpSession session = req.getSession();
+			session.setAttribute("stayInfoVo", vo);
 			req.getRequestDispatcher("/WEB-INF/views/staydetail/bio.jsp").forward(req, resp);
 			
 		}catch(Exception e) {

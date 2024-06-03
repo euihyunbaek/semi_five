@@ -15,8 +15,8 @@ public class FileUpload {
 		//서버에 파일 업로드
 		InputStream is = f.getInputStream(); //파일에 빨때 꽂음
 		//경로지정(민정노트북절대경로. 각자 테스트할 작업환경에 맞게 수정해야함)
-        String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\stay\\";
-//		String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\stay\\"; //숙소사진 저장 경로
+//        String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\stay\\";
+		String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\stay\\"; //숙소사진 저장 경로
 		int random = (int)(Math.random() * 90000 + 10000); // 수정된 파일이름에 10000 - 99999 사이의 숫자 부여
 		String originName = f.getSubmittedFileName(); //업로드된 파일 원래 이름
 		String ext = originName.substring(originName.lastIndexOf(".")); //업로드된 파일로부터 확장자 가져옴
