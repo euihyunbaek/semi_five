@@ -43,9 +43,11 @@
 	UPDATE MEMBER 
 	SET 
 		PWD = #{pwd}
-	 	NICK = #{nick}
-	 	PHONE = #{phone}
-	 	EMAIL = #{email}
+	 	,NICK = #{nick}
+	 	,PHONE = #{phone}
+	 	,EMAIL = #{email}
+	 	,PIC_URL = #{picUrl}
+	 	
 	WHERE NO = #{no}
 	
 	

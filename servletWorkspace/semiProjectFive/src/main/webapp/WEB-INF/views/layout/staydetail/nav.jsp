@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="./stay_detail_photo/stay_detail_photo.html">
+                <a href="/app/stay/detail/photo">
                     <div>사진</div>
                 </a>
             </li>

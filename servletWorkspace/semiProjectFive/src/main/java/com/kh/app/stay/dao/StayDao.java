@@ -29,4 +29,8 @@ public class StayDao {
 
 		return ss.selectOne("StayMapper.getStayByNo",no);
 	}
+
+	public List<StayPicVo> getStayPic(SqlSession ss,String no) {
+		return ss.selectList("StayMapper.getStayPic",no);
+	}
 }
