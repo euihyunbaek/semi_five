@@ -31,14 +31,23 @@
     	<%@ include file="/WEB-INF/views/layout/business/header.jsp" %>
 	</header>  
   <main>
-    
+	<h2>${ loginBizMemberVo.name } 님 숙박업소의 예약목록</h2>
       <table border="1" id="table">
+      	<thead>
+      		<tr>
+      			<th>방 이름</th>
+      			<th>체크인 - 체크아웃</th>
+      			<th>상세정보</th>
+      			<th><input type="checkbox" id ="selectAll"></th>
+      		</tr>
+      	</thead>
       	<tbody>
 	      	<c:forEach items="${ reservationVoList }" var="vo">
 		        <tr>
 		          <th>${ vo.roomName }</th>
 		          <td rowspan="2">${ vo.checkInDate } - ${ vo.checkOutDate }</td>
-		          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
+		          <td rowspan="2"><a href="/app/admin/business/detail?no=${vo.reservationId}">상세정보</a></td>
+		          <td rowspan="2"><input type="checkbox" name="status" class="ck" id="reservationStatus" value=${ vo.reservationId }></td>
 		        </tr>
 		        <tr>
 		          <td>
@@ -50,7 +59,11 @@
 	      	</c:forEach>
       	</tbody>
         
-        <tfoot></tfoot>
+        <tfoot>
+        	<td colspan="4">
+            	<div><button onclick="approveReservation();">승인하기</button></div>
+            </td>
+        </tfoot>
       </table>
       
       <div class="page-wrap">

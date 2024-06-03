@@ -34,7 +34,7 @@
   	SELECT ROWNUM AS RNUM, T.*
   	FROM
   	(
-  	SELECT R.RESERVATION_ID, M.NICK, R.CHECK_IN_DATE, R.CHECK_OUT_DATE, S.ROOM_NAME
+  	SELECT R.RESERVATION_ID, M.NICK, R.CHECK_IN_DATE, R.CHECK_OUT_DATE, S.ROOM_NAME, S.STORE_NAME
     FROM RESERVATION R
         JOIN MEMBER M
         ON R.USER_NO = M.NO
@@ -50,4 +50,13 @@
   <select id="getReservationCnt" resultType="int">
   	SELECT COUNT(RESERVATION_ID) FROM RESERVATION WHERE RESERVATION_STATUS = 1
   </select>
+  
+  <update id="approve">
+  	UPDATE RESERVATION
+    	SET RESERVATION_STATUS = 2
+    	<!-- BoardDao에서 넘어온 배열 이름 그대로 쓰는게 아님. 무조건 'array로' -->
+    <foreach item="reservationId" collection="array" separator="," open="WHERE RESERVATION_ID IN (" close=")">
+    #{reservationId}
+	</foreach>
+  </update>
 </mapper>
