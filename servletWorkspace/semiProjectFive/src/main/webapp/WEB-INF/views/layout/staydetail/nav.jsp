@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="./stay_detail_room/stay_detail_room.html">
+                <a href="/app/reservation/book">
                     <div>객실예약</div>
                 </a>
             </li>

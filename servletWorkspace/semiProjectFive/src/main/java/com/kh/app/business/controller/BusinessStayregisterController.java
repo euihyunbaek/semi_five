@@ -89,8 +89,8 @@ public class BusinessStayregisterController extends HttpServlet {
 	            String originFileName = thumbnail.getSubmittedFileName();
 	            InputStream is = thumbnail.getInputStream();
 	            //경로지정(민정노트북절대경로. 각자 테스트할 작업환경에 맞게 수정해야함)
-	            String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
-//	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
+//	            String path = "C:\\Users\\user\\dev\\semi_five\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
+	            String path = "D:\\semiProject\\servletWorkspace\\semiProjectFive\\src\\main\\webapp\\resources\\upload\\thumbnail\\";
 	            String random = UUID.randomUUID().toString();
 	            String ext = originFileName.substring(originFileName.lastIndexOf("."));
 	            changeName = System.currentTimeMillis() + "_" + random + ext;

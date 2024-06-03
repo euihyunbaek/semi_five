@@ -22,13 +22,14 @@ public class MemberReservationBookController extends HttpServlet {
 		try {
 			HttpSession session = req.getSession();
 			MemberVo loginMemberVo = (MemberVo) session.getAttribute("loginMemberVo"); //로그인한 멤버 정보
+//			String stayNo = req.getParameter("no");
 			StayVo stayInfoVo = (StayVo) session.getAttribute("stayInfoVo");
 			System.out.println(stayInfoVo);
 			
 			//로그인 하지 않고 접근하면 에러
 			if(loginMemberVo == null) {
 				session.setAttribute("alertMsg", "로그인 하셔야 볼 수 있습니다.");
-				resp.sendRedirect("/app/business/login");
+				resp.sendRedirect("/app/member/login");
 			} else {
 				req.getRequestDispatcher("/WEB-INF/views/reservation/book.jsp").forward(req, resp);
 			}
