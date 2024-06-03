@@ -4,7 +4,11 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.kh.app.member.dao.MemberDao;
 import com.kh.app.member.vo.MemberVo;
+import com.kh.app.reservation.vo.ReservationVo;
+
 import static com.kh.app.db.SqlSessionTemplate.getSqlSession;
+
+import java.util.List;
 
 
 public class MemberService {
@@ -107,10 +111,17 @@ public int quit(String no) throws Exception {
     ss.close();
     
     return result;
+}
 
-
+public List<ReservationVo> getReservationList(String no) throws Exception{
+	
+	SqlSession ss = getSqlSession();
+	List<ReservationVo>myResList= dao.getReservationList(ss, no);
+	ss.close();
+	return myResList;
 
 }
+
    
 	
 }

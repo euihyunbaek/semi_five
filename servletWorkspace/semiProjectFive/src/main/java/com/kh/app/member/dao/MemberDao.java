@@ -1,8 +1,11 @@
 package com.kh.app.member.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.app.member.vo.MemberVo;
+import com.kh.app.reservation.vo.ReservationVo;
 
 public class MemberDao {
 	
@@ -34,6 +37,12 @@ public class MemberDao {
 		
 		
 	}
+	
+	public List<ReservationVo> getReservationList (SqlSession ss, String no){
+		return ss.selectList("MemberMapper.getReservationList", no);
+	}
+	
+	
 }
 
 
