@@ -88,6 +88,11 @@
   </select>
   
   
+  <select id = "getStayPic" resultType="com.kh.app.stay.vo.StayPicVo">
+  SELECT * FROM STAY_PIC WHERE STAY_NO =#{no, jdbcType=NUMERIC} AND DEL_YN = 'N'
+  
+  </select>
+  
   
   
   

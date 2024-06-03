@@ -72,7 +72,7 @@
     </nav>
     <main class="main-content">
         <section class="container">
-     	<form action="/app/member/edit" method="post">
+     	<form action="/app/member/edit" method="post" enctype="multipart/form-data">
             <div> 
               <input type="hidden" value="${sessionScope.loginMemberVo.no}">
             </div>

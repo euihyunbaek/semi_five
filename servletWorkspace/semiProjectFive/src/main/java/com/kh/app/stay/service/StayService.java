@@ -71,4 +71,13 @@ public class StayService {
 	
 	
 	}
+
+	public List<StayPicVo> getStayPic(String no) throws Exception {
+		
+		SqlSession ss = getSqlSession();
+		List<StayPicVo> picVoList = dao.getStayPic(ss,no);
+		ss.close();
+		return picVoList;
+	
+	}
 }
