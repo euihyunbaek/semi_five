@@ -1,3 +1,4 @@
+
 /* 기본 스타일 */
 * {
   margin: 0;
@@ -12,14 +13,14 @@ html {
 }
 
 body {
+  display: flex;
   background-color: #ffffff;
-  height: auto;
-  max-height: 1500px;
+  height: 932px;
+  max-height: 932px;
   width: 430px;
   margin: 0;
-  display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 10px;
   overflow-x: hidden; /* 수평 스크롤바 제거 */
   box-sizing: border-box;
@@ -33,109 +34,68 @@ header {
   border-bottom: 1px solid gray;
   display: grid;
   grid-template-columns: 8fr 2fr;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 
-h2 {
-  padding-left: 10px;
-}
+
 
 .buttons {
   display: flex;
-  justify-content: space-between
-  ;
+  justify-content: space-between;
   padding: 0 10px;
   text-decoration: none;
 }
+
+
 
 #home-btn {
   flex: 8;
 }
 
-#sidebar-btn, #logout-btn {
+/* #sidebar-btn, #logout-btn {
   flex: 1;
-}
+} */
 
 .fi {
   background-color: none;
   color: ghostwhite;
 }
 
-#login-img {
-  border-radius: 20px;
-}
-
-#login-info-space {
-  font-size: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: ghostwhite;
-}
-
-/*메인 섹션*/
-main{
-  width: 70%;
-  height: 90%;
-  background-color: ghostwhite;
-  margin: 0 auto;
-  padding: 20px;
-  color: #000000;
-}
-
-h1 {
-  margin: 0.5em 0.5em;
-}
-
-p {
-  margin: 1em 1em;
-}
-
-
-form {
-  margin: 0 auto;
-  padding-bottom: 2em;
-}
-
-fieldset {
-  border: none;
-  margin: 0 0;
-  padding: 0 0;
-}
-
-fieldset:last-of-type {
-  margin-bottom: 1em;
-}
-
-label {
-  display: block;
-  background-color:ghostwhite;
-  color:black;
-}
-
-input,
-textarea,
-select {
-  margin: 10px 0 0 0;
+/* 메인 섹션 */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: 2em;
-  border: none;
-  padding: 0 0;
+  height: auto;
+  height: 932px;
+  background-color: ghostwhite;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  font-size: 13px;
+  overflow: hidden; 
+  border: solid 0.5px;
+  border-color: black;
+  overflow-y: auto;
 }
 
-.inline {
-  width: unset;
-  margin: 0 0.5em 0 0;
-  display: inline;
-  vertical-align: middle;
-}
 
-input[type="submit"] {
-  display: block;
-  width: 60%;
+.box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  border: double 3px;
+  border-color: lightgray;
+  padding: 10px 10px;
+  overflow: hidden; 
   margin: 0 auto;
+  box-sizing: border-box;
 }
+
 
 /*탑버튼*/
 #top-button {
@@ -155,19 +115,20 @@ input[type="submit"] {
 footer {
   background-color: #333;
   color: white;
+  height: auto;
   text-align: center;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 35px;
+  /* margin-top: 10px; */
   font-size: 0.5em;
 }
-
-a {
-  color: #000000;
+/* 로그인 후 "환영합니다." 텍스트 출력  */
+#login-info-space {
+  font-size: 10px;
 }
 
-#back-button {
-  color: #ffffff;
+#title {
+  text-align: center;
 }
