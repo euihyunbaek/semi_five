@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>member-menu</title>
-<link rel="stylesheet" href="/app/resources/css/member/menu.css">
+<link rel="stylesheet" href="/app/resources/css/member/myreservation.css">
 <%@ include file="/WEB-INF/views/layout/util.jsp"%>
 
 <link rel="stylesheet"
@@ -68,31 +68,29 @@
 		</ul>
 	</nav>
 	<main class="main-content">
-		<section class="container">
-
-			<c:forEach var="x" items="myResList">
-				<div>
-					<div>예약 번호 : ${x.reservationId}</div>
-					<div>숙소명 : ${x.storeName}</div>
-					<c:if test="${empty x.roomName}">
-						<div>객실명 : ${x.storeName}</div>
-					</c:if>
-					<div>객실명 : ${x.roomName}</div>
-					<div>체크인 : ${x.checkInDate}</div>
-					<div>체크아웃 : ${x.checkOutDate}</div>
-					<div>예약상태 : ${x.name}</div>
-					<div>총 인원 : ${x.totalGuest}</div>
-					<div>동반 반려견 수 : ${x.countDog}</div>
-					<div>총 금액: ${x.totalPrice}</div>
-					<div>예약일시 : ${x.enrollDate}</div>
-				</div>
-
-			</c:forEach>
-
-
-
-
-		</section>
+<section class="container">
+    <c:forEach var="x" items="${myResList}">
+        <div id ="myreservation">
+            <div>예약 번호 : ${x.reservationId}</div>
+            <div>숙소명 : ${x.storeName}</div>
+            <c:choose>
+                <c:when test="${empty x.roomName}">
+                    <div>객실명 : ${x.storeName}</div>
+                </c:when>
+                <c:otherwise>
+                    <div>객실명 : ${x.roomName}</div>
+                </c:otherwise>
+            </c:choose>
+            <div>체크인 : ${x.checkInDate}</div>
+            <div>체크아웃 : ${x.checkOutDate}</div>
+            <div>예약상태 : ${x.name}</div>
+            <div>총 인원 : ${x.totalGuest}</div>
+            <div>동반 반려견 수 : ${x.countDog}</div>
+            <div>총 금액: ${x.totalPrice}</div>
+            <div>예약일시 : ${x.enrollDate}</div>
+        </div>
+    </c:forEach>
+</section>
 	</main>
 	<footer>
 		<p>Copyright 2024. 함께하개 All Rights Reserved</p>
