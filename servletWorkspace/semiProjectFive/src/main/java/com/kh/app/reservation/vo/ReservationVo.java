@@ -41,6 +41,7 @@ public class ReservationVo {
 		this.roomName = roomName;
 		this.storeName = storeName;
 	}
+
 	@Override
 	public String toString() {
 		return "ReservationVo [reservationId=" + reservationId + ", userNo=" + userNo + ", checkInDate=" + checkInDate
@@ -134,9 +135,4 @@ public class ReservationVo {
 		this.storeName = storeName;
 	}
 
-	
-	
-	
-	
-	
 }

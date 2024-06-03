@@ -47,6 +47,15 @@ public class ReservationService {
 		return reservationVoList;
 	}
 	
+	//예약번호상세조회
+	public ReservationVo getReservationByNo(String no) throws Exception {
+		
+		//DAO 호출
+		SqlSession ss = getSqlSession();
+		ReservationVo vo = dao.getReservationByNo(ss, no);
+		return vo;
+	}
+	
 	//예약갯수조회
 	public int getReservationCnt() throws Exception {
 		SqlSession ss = getSqlSession();

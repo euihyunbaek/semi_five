@@ -16,13 +16,18 @@ public class ReservationDao {
 		return ss.insert("ReservationMapper.book", vo);
 	}
 	
-	//숙소예약상세조회.
+	//예약목록조회(사용자)
 	public List<ReservationVo> selectByBusiness(SqlSession ss, String no, PageVo pvo) {
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("no", no);
 		parameters.put("startNum", pvo.getStartNum());
 		parameters.put("endNum", pvo.getEndNum());
 		return ss.selectList("ReservationMapper.selectByBusiness", parameters);
+	}
+	
+	//예약번호상세조회
+	public ReservationVo getReservationByNo(SqlSession ss, String no) {
+		return ss.selectOne("ReservationMapper.getReservationByNo", no);
 	}
 
 	//예약갯수조회

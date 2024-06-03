@@ -18,7 +18,10 @@
 	        <div id="home-button">
 	          <a id="home-anchor" href="/app/home"><i class="fi fi-rr-home"></i></a>
 	        </div>
-	        <div id="sidb-bar-btn">
+	        <div id="sidebar-btn">
+            	<a id="home-anchor" href="/app/business/mypage"><i class="fi fi-rr-menu-burger"></i></a>
+          	</div>
+	        <div id="logout-btn">
 	          <a id="logout" href="/app/business/logout"><i class="fi fi-rr-exit"></i></a>
 	        </div>
 	      </div>
