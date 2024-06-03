@@ -1,7 +1,12 @@
 package com.kh.app.reservation.dao;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
+import com.kh.app.common.vo.PageVo;
 import com.kh.app.reservation.vo.ReservationVo;
 
 public class ReservationDao {
@@ -9,5 +14,19 @@ public class ReservationDao {
 	//예약하기
 	public int book(SqlSession ss, ReservationVo vo) {
 		return ss.insert("ReservationMapper.book", vo);
+	}
+	
+	//숙소예약상세조회.
+	public List<ReservationVo> selectByBusiness(SqlSession ss, String no, PageVo pvo) {
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("no", no);
+		parameters.put("startNum", pvo.getStartNum());
+		parameters.put("endNum", pvo.getEndNum());
+		return ss.selectList("ReservationMapper.selectByBusiness", parameters);
+	}
+
+	//예약갯수조회
+	public int getReservationCnt(SqlSession ss) {
+		return ss.selectOne("ReservationMapper.getReservationCnt");
 	}
 }

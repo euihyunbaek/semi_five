@@ -173,6 +173,37 @@ main {
   font-size: 13px;
 }
 
+/* 페이지네이션 스타일 */
+.page-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0; /* 위아래 간격 추가 */
+  color: black;
+}
+
+.page-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-area a,
+.page-area button {
+  text-decoration: none;
+  color: #334D8F;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-area a:hover,
+.page-area button:hover {
+  background-color: #334D8F;
+  color: white;
+}
+
 /*탑버튼*/
 #top-button {
   display: none; /*초기에는 숨김*/

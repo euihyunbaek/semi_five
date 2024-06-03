@@ -17,148 +17,67 @@
 </head>
 <body>
   <header>
-    <div class="heading-space">
-      <h2 id="title">예약요청 조회</h2>
-      <div class="buttons">
-        <div id="home-button">
-          <a id="home-anchor" href="./home.html"><i class="fi fi-rr-home"></i></a>
-        </div>
-        <div id="logout-btn">
-          <a id="logout" href=""><i class="fi fi-rr-exit"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="login-space">
-      <div id="login-img-space">
-        <img id="login-img" src="./resources/img/abc3.png" width="85px" height="40px" alt="">
-      </div>
-      <div id="login-info-space">
-        ABC님 환영합니다!
-      </div>
-    </div>
-  </header>
+  		<div class="heading-space">
+	      <h2>예약목록 조회</h2>
+	      <div class="buttons">
+	        <div id="home-button">
+	          <a id="home-anchor" href="/app/home"><i class="fi fi-rr-home"></i></a>
+	        </div>
+	        <div id="sidb-bar-btn">
+	          <a id="logout" href="/app/business/logout"><i class="fi fi-rr-exit"></i></a>
+	        </div>
+	      </div>
+	    </div>
+    	<%@ include file="/WEB-INF/views/layout/business/header.jsp" %>
+	</header>  
   <main>
-    <div id="container">
+    
       <table border="1" id="table">
-        <tr>
-          <th>101호 - 스탠다드룸</th>
-          <td rowspan="2">Jan 01, 2024 - Jan 04, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            다미다미 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>203호 - 트윈룸</th>
-          <td rowspan="2">Feb 04, 2024 - Feb 10, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">  
-            푸들수호대 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>203호 - 트윈룸</th>
-          <td rowspan="2">Feb 08, 2024 - Feb 11, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            Starlight01 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>201호 - 스위트룸</th>
-          <td rowspan="2">Mar 17, 2024 - Mar 21, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            Travelbug 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>101호 - 스탠다드룸</th>
-          <td rowspan="2">Apr 01, 2024 - Apr 04, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">  
-            카푸치노 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>203호 - 트윈룸</th>
-          <td rowspan="2">May 04, 2024 - May 10, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            couch78 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>203호 - 트윈룸</th>
-          <td rowspan="2">May 08, 2024 - May 11, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            surfer11 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>201호 - 스위트룸</th>
-          <td rowspan="2">Jun 17, 2024 - Jun 21, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            청국장 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <th>203호 - 트윈룸</th>
-          <td rowspan="2">Jul 08, 2024 - Jul 11, 2024</td>
-          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img id="img1" src="./dd.jpeg" width="20px" height="20px" alt="">
-            BTS정국장 님
-          </td>
-          <!-- <td></td> -->
-          <!-- <td></td> -->
-        </tr>
+      	<tbody>
+	      	<c:forEach items="${ reservationVoList }" var="vo">
+		        <tr>
+		          <th>${ vo.roomName }</th>
+		          <td rowspan="2">${ vo.checkInDate } - ${ vo.checkOutDate }</td>
+		          <td rowspan="2"><button class="detailbtn">상세정보</button></td>
+		        </tr>
+		        <tr>
+		          <td>
+		            ${ vo.nick } 님
+		          </td>
+		          <!-- <td></td> -->
+		          <!-- <td></td> -->
+		        </tr>
+	      	</c:forEach>
+      	</tbody>
+        
+        <tfoot></tfoot>
       </table>
+      
+      <div class="page-wrap">
+    	<div class="page-area">
+				<c:if test="${pvo.currentPage > 1}">
+					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage-1}'">이전</button>
+				</c:if>
+				<c:forEach begin="${pvo.startPage}" end="${pvo.endPage}" var="x">
+					<c:if test="${pvo.currentPage == x}">
+						<a>
+						<strong>
+						${x}
+						</strong>						
+						</a>
+					</c:if>
+					<c:if test="${pvo.currentPage != x}">
+						<a href="/app/admin/member/list?pno=${x}">
+						${x}
+						</a>
+					</c:if>
+				</c:forEach>
+				<c:if test="${pvo.currentPage < pvo.maxPage }">
+					<button onclick = "location.href='/app/admin/member/list?pno=${pvo.currentPage+1}'">다음</button>
+				</c:if>
+		</div>
     </div>
+    
   </main>
   <a id="top-button">TOP</a>
   <footer>

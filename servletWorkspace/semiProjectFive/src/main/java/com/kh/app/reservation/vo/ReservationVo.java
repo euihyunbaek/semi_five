@@ -12,16 +12,18 @@ public class ReservationVo {
 	private String stayNo;
 	private String reservationStatus;
 	private String countDog;
+	private String nick; //회원의 닉네임
+	private String roomName;
 	
 	//noArgConstructor
 	public ReservationVo () {
 		
 	}
 
-	//allArgsConstructor
+	//AllArgsConstructor
 	public ReservationVo(String reservationId, String userNo, String checkInDate, String checkOutDate,
 			String enrollDate, String totalGuest, String totalPrice, String stayNo, String reservationStatus,
-			String countDog) {
+			String countDog, String nick, String roomName) {
 		this.reservationId = reservationId;
 		this.userNo = userNo;
 		this.checkInDate = checkInDate;
@@ -32,6 +34,8 @@ public class ReservationVo {
 		this.stayNo = stayNo;
 		this.reservationStatus = reservationStatus;
 		this.countDog = countDog;
+		this.nick = nick;
+		this.roomName = roomName;
 	}
 
 	//getters and setters
@@ -115,13 +119,29 @@ public class ReservationVo {
 		this.countDog = countDog;
 	}
 
-	//toString()
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public String getRoomName() {
+		return roomName;
+	}
+
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
+
 	@Override
 	public String toString() {
 		return "ReservationVo [reservationId=" + reservationId + ", userNo=" + userNo + ", checkInDate=" + checkInDate
 				+ ", checkOutDate=" + checkOutDate + ", enrollDate=" + enrollDate + ", totalGuest=" + totalGuest
 				+ ", totalPrice=" + totalPrice + ", stayNo=" + stayNo + ", reservationStatus=" + reservationStatus
-				+ ", countDog=" + countDog + "]";
+				+ ", countDog=" + countDog + ", nick=" + nick + ", roomName=" + roomName + "]";
 	}
+
 	
 }
