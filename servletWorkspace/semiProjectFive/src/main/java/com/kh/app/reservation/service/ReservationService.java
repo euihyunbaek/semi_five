@@ -55,4 +55,22 @@ public class ReservationService {
 		ss.close();
 		return cnt;
 	}
+	
+	//예약일괄승인
+	public int approve(String[] noArr) throws Exception {
+	
+	
+		SqlSession ss = getSqlSession();
+		int result = dao.approve(ss, noArr);
+		if(result>0) {
+			
+			ss.commit();
+	
+		}else {
+			ss.rollback();
+	
+		}ss.close();
+		return result;
+		
+	}
 }

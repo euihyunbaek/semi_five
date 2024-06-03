@@ -29,4 +29,13 @@ public class ReservationDao {
 	public int getReservationCnt(SqlSession ss) {
 		return ss.selectOne("ReservationMapper.getReservationCnt");
 	}
+	
+	//일괄승인하기
+	public int approve(SqlSession ss, String[] noArr) {
+		System.out.println("noArr : " + noArr);
+		for (String x : noArr) {
+			System.out.println("x : " + x);
+		}
+		 return ss.update("ReservationMapper.approve",noArr);
+	}
 }
