@@ -70,19 +70,25 @@
 	<main class="main-content">
 		<section class="container">
 
+			<c:forEach var="x" items="myResList">
+				<div>
+					<div>예약 번호 : ${x.reservationId}</div>
+					<div>숙소명 : ${x.storeName}</div>
+					<c:if test="${empty x.roomName}">
+						<div>객실명 : ${x.storeName}</div>
+					</c:if>
+					<div>객실명 : ${x.roomName}</div>
+					<div>체크인 : ${x.checkInDate}</div>
+					<div>체크아웃 : ${x.checkOutDate}</div>
+					<div>예약상태 : ${x.name}</div>
+					<div>총 인원 : ${x.totalGuest}</div>
+					<div>동반 반려견 수 : ${x.countDog}</div>
+					<div>총 금액: ${x.totalPrice}</div>
+					<div>예약일시 : ${x.enrollDate}</div>
+				</div>
 
-			<div>
+			</c:forEach>
 
-				<div>예약 번호 : ${requestScope.vo.categoryName}</div>
-				<div>숙소 이름 : ${requestScope.vo.title }</div>
-				<div>체크인 : ${requestScope.vo.nick}</div>
-				<div>체크아웃 : ${requestScope.vo.hit}</div>
-				<div>예약상태 : ${requestScope.vo.hit}</div>
-				<div>총 인원 : ${requestScope.vo.content}</div>
-				<div>동반 반려견 수 : ${requestScope.vo.content}</div>
-				<div>총 금액: ${requestScope.vo.content}</div>
-				<div>예약일시 : ${requestScope.vo.createDate}</div>
-			</div>
 
 
 

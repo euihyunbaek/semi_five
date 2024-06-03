@@ -76,6 +76,30 @@
 		
 	
 	</update>
+	
+	<select id = "getReservationList" resultType = "com.kh.app.reservation.vo.ReservationVo">
+	
+	    SELECT RESERVATION_ID
+		        , S.STORE_NAME 
+		        ,S.ROOM_NAME
+		        ,R.CHECK_IN_DATE
+		        , R.CHECK_OUT_DATE
+		        ,ST.NAME
+		        ,R.TOTAL_GUEST
+		        ,R.TOTAL_PRICE
+		        , R.ENROLL_DATE
+		        ,R.COUNT_DOG
+	    FROM RESERVATION R 
+	    JOIN STATUS ST ON R.RESERVATION_STATUS = ST.STATUS_NO
+	    JOIN MEMBER M ON R.USER_NO = M.NO
+	    JOIN STAY S ON R.STAY_NO = S.NO
+	    
+	    WHERE M.NO=#{no}
+	    
+	    
+	
+	</select>
+	
 
 
 </mapper>
