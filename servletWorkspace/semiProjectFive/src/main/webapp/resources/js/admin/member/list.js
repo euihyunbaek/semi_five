@@ -33,7 +33,8 @@ function deleteUser(){
 	//	console.log(checkboxArr[i].checked) ;
 	}
 	// 경로로 보내기(임시주소)// location.href="http://127.0.0.1:8888/app/admin/member/delete"+str;
-	
+	location.href="http://127.0.0.1:8888/app/admin/member/delete?"+str;
+
 
 }
 

@@ -56,5 +56,17 @@ public class AdminDao {
 		 return ss.update("AdminBusinessMapper.approve",noArr);
 	}
 
+	public int delete(SqlSession ss, String[] noArr) {
+			
+		
+		System.out.println("noArr : " + noArr);
+		for (String x : noArr) {
+			System.out.println("x : " + x);
+		}
+		 return ss.update("AdminMemberMapper.delete",noArr);
+
+		
+	}
+
 	
 }

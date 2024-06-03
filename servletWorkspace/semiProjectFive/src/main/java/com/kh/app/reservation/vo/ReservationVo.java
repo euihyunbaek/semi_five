@@ -17,15 +17,15 @@ public class ReservationVo {
 	private String roomName; //숙소의 방이름
 	private String storeName; //숙소 이름
 	
-
+	
 	public ReservationVo() {
 		super();
-		//TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub
 	}
-	//AllArgsConstructor
 	public ReservationVo(String reservationId, String userNo, String checkInDate, String checkOutDate,
 			String enrollDate, String totalGuest, String totalPrice, String stayNo, String reservationStatus,
 			String name, String countDog, String nick, String roomName, String storeName) {
+		super();
 		this.reservationId = reservationId;
 		this.userNo = userNo;
 		this.checkInDate = checkInDate;
@@ -134,10 +134,5 @@ public class ReservationVo {
 	public void setStoreName(String storeName) {
 		this.storeName = storeName;
 	}
-	
-	
-	
-	
-	
-	
+
 }
