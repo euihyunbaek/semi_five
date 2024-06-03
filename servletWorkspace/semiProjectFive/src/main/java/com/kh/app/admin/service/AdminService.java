@@ -102,6 +102,25 @@ public class AdminService {
 
 
 
+	public int delete(String[] noArr) throws Exception {
+		
+		SqlSession ss = getSqlSession();
+		int result = dao.delete(ss, noArr);
+		if(result>0) {
+			
+			ss.commit();
+
+		}else {
+			ss.rollback();
+
+		}ss.close();
+		return result;
+	
+	
+	}
+
+
+
 
 
 }
